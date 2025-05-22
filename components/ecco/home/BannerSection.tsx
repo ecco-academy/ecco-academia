@@ -19,7 +19,7 @@ export const BannerSection: React.FC<BannerSectionProps> = ({
   mobileImageAlt,
 }) => {
   return (
-    <section className="relative h-[490px] w-full flex flex-col items-center">
+    <section className="relative h-[360px] lg:h-[600px] w-full flex flex-col items-center">
       <Image
         className="w-full absolute z-20 bg-gradient-to-r from-gray-700/60 to-transparent pointer-events-none left-0 hidden md:block"
         src={desktopImageSrc}
