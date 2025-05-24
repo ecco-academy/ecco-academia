@@ -21,7 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider localization={esMX}>
+    <ClerkProvider
+      afterSignOutUrl={"/home"}
+      localization={{
+        ...esMX,
+        signIn: {
+          start: {
+            titleCombined: "Bienvenido a {{applicationName}}",
+          },
+        },
+      }}
+    >
       <html lang="en">
         <body className={`${epilogueSans.variable} antialiased`}>
           <Header />

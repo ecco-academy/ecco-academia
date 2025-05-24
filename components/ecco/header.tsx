@@ -1,4 +1,3 @@
-// import Image from "@/components/ui/image";
 import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import React from "react";
@@ -9,7 +8,7 @@ const Header: React.FC = () => (
     <div className="flex items-center"></div>
     <nav>
       <SignedOut>
-        <SignInButton mode="modal">
+        <SignInButton mode="redirect">
           <Button variant="ghost" className=" text-gray-700">
             Entrar
             <LogIn />
@@ -17,7 +16,7 @@ const Header: React.FC = () => (
         </SignInButton>
       </SignedOut>
       <SignedIn>
-        <UserButton></UserButton>
+        <UserButton />
       </SignedIn>
     </nav>
   </header>
