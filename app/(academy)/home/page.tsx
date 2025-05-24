@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   BannerSection,
   BannerSectionProps,
-} from "../../components/ecco/home/BannerSection";
+} from "../../../components/ecco/home/BannerSection";
 import { useRouter } from "next/navigation";
 
 const bannerSectionContent: BannerSectionProps = {

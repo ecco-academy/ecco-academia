@@ -33,3 +33,6 @@ export default function SignInPage() {
     </div>
   );
 }
+SignInPage.getLayout = function getLayout(page: React.ReactNode) {
+  return <div>{page}</div>;
+};

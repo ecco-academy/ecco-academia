@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
-import Header from "../components/ecco/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { esMX } from "@clerk/localizations";
 
@@ -34,7 +33,6 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={`${epilogueSans.variable} antialiased`}>
-          <Header />
           {children}
         </body>
       </html>
