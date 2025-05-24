@@ -8,7 +8,7 @@ import Link from "next/link";
 const Header: React.FC = () => (
   <header className="flex items-center justify-between px-4 md:px-8 lg:px-10 py-2 rounded-b-3xl bg-white fixed top-0 z-50 shadow-xs min-h-10 lg:min-h-12 w-full">
     <div className="flex items-center">
-      <Link href={"/"}>
+      <Link href={"/home"}>
         <Image
           src="/logo.png"
           alt="Logo"

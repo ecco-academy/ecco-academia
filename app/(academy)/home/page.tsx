@@ -1,11 +1,14 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   BannerSection,
   BannerSectionProps,
 } from "../../../components/ecco/home/BannerSection";
 import { useRouter } from "next/navigation";
+import {
+  CoursesSection,
+  CoursesSectionProps,
+} from "@/components/ecco/home/CoursesSection";
 
 const bannerSectionContent: BannerSectionProps = {
   title: "Bienvenido a Ecco Academia",
@@ -16,6 +19,27 @@ const bannerSectionContent: BannerSectionProps = {
   mobileImageAlt: "Imagen de estiramiento por Magui",
 };
 
+const coursesSectionContent: Partial<CoursesSectionProps> = {
+  title: "Cursos destacados",
+  courses: [
+    {
+      duration: "1h 30m",
+      _id: "123",
+      imageUrl: "/courseMassage.png", // Reemplaza con la URL real si está disponible
+      title: "Método MADEM, Mapa de masaje",
+      description:
+        "Desarrolla tu potencial como masoterapeuta y domina el arte y el negocio del masaje (una guía paso a paso de cero a experto.)",
+      slug: "metodo-madem-mapa-de-masaje",
+      price: 21.56,
+      instructor: {
+        name: "Magui Bell",
+        avatarUrl: "/logo.png",
+        bio: "Experta en masoterapia",
+        _id: "123",
+      },
+    },
+  ],
+};
 export default function Page() {
   const router = useRouter();
   const handleSelectCourse = (courseId: string) => {
@@ -24,12 +48,10 @@ export default function Page() {
   return (
     <div className="">
       <BannerSection {...bannerSectionContent} />
-      <Card
-        onClick={() => handleSelectCourse("1")}
-        className="w-80 m-4 cursor-pointer"
-      >
-        <CardContent>Curso 1</CardContent>
-      </Card>
+      <CoursesSection
+        {...coursesSectionContent}
+        onSelectCourse={handleSelectCourse}
+      />
     </div>
   );
 }
