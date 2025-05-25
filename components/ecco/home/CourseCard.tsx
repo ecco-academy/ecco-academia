@@ -20,7 +20,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
     <Card
       key={course._id}
       className={clsx(
-        "flex flex-col md:flex-row justify-center w-full max-w-[350px] md:max-w-none overflow-hidden gap-0 p-0",
+        "flex flex-col md:flex-row justify-center w-full  md:max-w-[920px] overflow-hidden gap-0 p-0 h-full ",
         className
       )}
     >
@@ -29,9 +29,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         alt={course.title}
         width={300}
         height={300}
-        className="w-auto h-auto max-w-[600px]"
+        className="w-auto h-auto max-w-[650px] object-cover shrink-0"
       />
-      <div className="p-4 md:p-6 px-6 md:px-10 pb-6 flex flex-col justify-between">
+      <div className="p-4 md:p-6 px-6 md:px-8 pb-6 flex flex-col justify-between">
         <h2 className="text-xl font-bold text-gray-600 lg:text-2xl mb-2">
           {course.title}
         </h2>
