@@ -36,11 +36,11 @@ export const BannerSection: React.FC<BannerSectionProps> = ({
         height={500}
         unoptimized
       />
-      <div className="max-w-[1520px] 2xl:px-0 text-white w-ful absolute top-16 md:top-32 lg:top-32 2xl:top-40 left-5 md:left-16 lg:left-32 2xl:left-52">
-        <h1 className="text-2xl md:text-6xl z-50 max-w-[180px] md:max-w-[420px] font-bold mb-2 lg:mb-4 leading-7 md:leading-[56px]">
+      <div className="max-w-[1520px] 2xl:px-0  w-ful absolute top-16 md:top-32 lg:top-32 2xl:top-40 left-5 md:left-16 lg:left-32 2xl:left-60">
+        <h1 className="text-2xl md:text-6xl z-50 max-w-[180px] md:max-w-[420px] font-bold mb-2 lg:mb-4 leading-7 md:leading-[56px] text-white">
           {title}
         </h1>
-        <p className=" z-50 text-base md:text-2xl max-w-[200px] md:max-w-[350px] leading-5 md:leading-7">
+        <p className=" z-50 text-base md:text-2xl max-w-[200px] md:max-w-[350px] leading-5 md:leading-7 text-white">
           {description}
         </p>
       </div>

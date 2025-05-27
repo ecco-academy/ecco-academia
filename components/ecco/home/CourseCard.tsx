@@ -20,7 +20,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
     <Card
       key={course._id}
       className={clsx(
-        "flex flex-col md:flex-row justify-center w-full  md:max-w-[920px] overflow-hidden gap-0 p-0 h-full ",
+        "flex flex-col md:flex-row justify-center w-full  overflow-hidden gap-0 p-0 h-full ",
         className
       )}
     >
@@ -50,8 +50,8 @@ export const CourseCard: React.FC<CourseCardProps> = ({
               </span>
             </div>
           </div>
-          <Button className="px-8" onClick={() => onSelectCourse(course._id)}>
-            Ver curso
+          <Button variant="outline" onClick={() => onSelectCourse(course._id)}>
+            Ver detalles
           </Button>
         </div>
       </div>
