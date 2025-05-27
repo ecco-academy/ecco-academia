@@ -20,9 +20,10 @@ export const CourseCard: React.FC<CourseCardProps> = ({
     <Card
       key={course._id}
       className={clsx(
-        "flex flex-col md:flex-row justify-center w-full  overflow-hidden gap-0 p-0 h-full ",
+        "flex flex-col md:flex-row justify-center w-full  overflow-hidden gap-0 p-0 h-full cursor-pointer",
         className
       )}
+      onClick={() => onSelectCourse(course._id)}
     >
       <Image
         src={course.imageUrl}

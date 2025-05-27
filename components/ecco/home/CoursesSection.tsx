@@ -1,7 +1,7 @@
 import { Course } from "@/lib/types/Course";
 import React, { ReactNode } from "react";
-import { ChevronsRight } from "lucide-react";
-import Link from "next/link";
+// import { ChevronsRight } from "lucide-react";
+// import Link from "next/link";
 import { CourseCard } from "./CourseCard";
 import clsx from "clsx";
 export interface CoursesSectionProps {

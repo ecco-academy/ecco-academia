@@ -95,7 +95,7 @@ export default function Page() {
     <div className="pb-10 lg:pb-20">
       <BannerSection {...bannerSectionContent} />
       <div className="flex flex-col items-center">
-        <div className=" max-w-[1180px] ">
+        <div className=" max-w-screen-full">
           <CoursesSection
             {...coursesSectionContent}
             onSelectCourse={handleSelectCourse}
