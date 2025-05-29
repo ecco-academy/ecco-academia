@@ -20,12 +20,12 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
   return (
     <section
       className={clsx(
-        "d-flex flex-col items-center justify-center p-4 w-full  mx-auto pt-8 lg:pt-18",
+        "d-flex flex-col items-center justify-center p-4 w-full  mx-auto lg:pt-18",
         className
       )}
     >
       <div className="flex items-end justify-between w-full mb-4 lg:mb-5">
-        <h1 className="font-semibold text-gray-600 text-[22px] lg:text-2xl">
+        <h1 className="font-semibold text-header text-[22px] lg:text-2xl">
           {title}
         </h1>
         {/* <Link

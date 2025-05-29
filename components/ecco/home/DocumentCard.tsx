@@ -29,7 +29,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
         <div className="flex flex-col justify-between pe-5">
           <div>
             <div className="w-full flex items-center gap-3 justify-between">
-              <h2 className="text-lg mt-2 font-bold text-gray-600 leading-3 mb-2">
+              <h2 className="text-lg mt-2 font-bold text-header leading-3 mb-2">
                 {document.title}
               </h2>
               <span className="text-xs text-gray-400 font-semibold">PDF</span>

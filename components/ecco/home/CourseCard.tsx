@@ -33,10 +33,10 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         className="w-auto h-auto max-w-[650px] object-cover shrink-0"
       />
       <div className="p-4 md:p-6 px-6 md:px-8 pb-6 flex flex-col justify-between">
-        <h2 className="text-xl font-bold text-gray-600 lg:text-2xl mb-2">
+        <h2 className="text-xl font-bold text-header lg:text-2xl mb-2">
           {course.title}
         </h2>
-        <p className=" text-gray-500 mb-6">{course.description}</p>
+        <p className=" text-content mb-6">{course.description}</p>
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center max-w-36 md:max-w-none">
             <Avatar className="me-2 mt-1">
