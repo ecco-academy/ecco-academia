@@ -1,3 +1,4 @@
+import VideoPlayer from "@/components/ecco/courses/VidePlayer";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,8 +7,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Card } from "@/components/ui/card";
 import { Course } from "@/lib/types/Course";
-import Link from "next/link";
+// import Image from "next/image";
 import React from "react";
 interface CourseDetailsPageProps {
   params: { courseId: string };
@@ -30,13 +32,36 @@ const course: Course = {
     _id: "123",
   },
 };
-export default async function CourseDetailsPage({
-  params,
-}: CourseDetailsPageProps) {
-  const { courseId } = await params;
+export default async function CourseDetailsPage({}: // params,
+CourseDetailsPageProps) {
+  // const { courseId } = await params;
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       <CourseBreadcrumb course={course} />
+      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 pt-2 p-4 mt-6">
+        <div className="col-span-2">
+          <div className="w-full rounded-2xl overflow-hidden h-[377px]">
+            <VideoPlayer
+              className="w-full"
+              url={"https://www.youtube.com/watch?v=_qrISJjWiH0"}
+              controls
+              width="100%"
+              height="100%"
+              // light={
+              //   <Image
+              //     src="/courseMassage.png"
+              //     alt="Thumbnail"
+              //     width={680}
+              //     height={400}
+              //   />
+              // }
+            />
+          </div>
+        </div>
+        <div className="col-span-1">
+          <Card></Card>
+        </div>
+      </div>
     </div>
   );
 }
