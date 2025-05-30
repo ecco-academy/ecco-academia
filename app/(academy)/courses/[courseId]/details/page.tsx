@@ -7,59 +7,48 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Course } from "@/lib/types/Course";
-// import Image from "next/image";
+import { course } from "@/data/courses";
 import React from "react";
 interface CourseDetailsPageProps {
   params: { courseId: string };
 }
-
-const course: Course = {
-  duration: "1h 30m",
-  _id: "123",
-  imageUrl: "/courseMassage.png",
-  title: "Método MADEM, Mapa de masaje",
-  description:
-    "Desarrolla tu potencial como masoterapeuta y domina el arte y el negocio del masaje (una guía paso a paso de cero a experto.) Aprende a realizar un masaje completo de cuerpo entero, desde la cabeza hasta los pies, con técnicas avanzadas y consejos prácticos.",
-
-  slug: "metodo-madem-mapa-de-masaje",
-  price: 21.56,
-  instructor: {
-    name: "Maga Abuin",
-    avatarUrl: "/logo.png",
-    bio: "Experta en masoterapia",
-    _id: "123",
-  },
-};
 export default async function CourseDetailsPage({}: // params,
 CourseDetailsPageProps) {
-  // const { courseId } = await params;
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       <CourseBreadcrumb course={course} />
-      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 pt-2 p-4 mt-6">
+      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 pt-2 mt-6">
         <div className="col-span-2">
-          <div className="w-full rounded-2xl overflow-hidden h-[377px]">
+          <div className="w-full rounded-xl overflow-hidden h-[224px] md:h-[391px] mb-4 ">
             <VideoPlayer
-              className="w-full"
-              url={"https://www.youtube.com/watch?v=_qrISJjWiH0"}
+              className="w-full rounded-md"
+              url={"/openingVideo.mp4"}
               controls
               width="100%"
               height="100%"
-              // light={
-              //   <Image
-              //     src="/courseMassage.png"
-              //     alt="Thumbnail"
-              //     width={680}
-              //     height={400}
-              //   />
-              // }
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload",
+                  },
+                },
+              }}
             />
           </div>
+          <h2 className="font-bold text-header text-[22px] lg:text-2xl">
+            {course.title}
+          </h2>
         </div>
         <div className="col-span-1">
-          <Card></Card>
+          <Card className="pt-4">
+            <CardContent>
+              <span className="font-semibold text-lg text-header">
+                Detalles del curso:
+              </span>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

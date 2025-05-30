@@ -10,7 +10,7 @@ import {
   coursesSectionContent,
   documentsSectionContent,
   personalizedServiceContent,
-} from "@/data/home";
+} from "@/content/home";
 
 export default function HomePage() {
   const router = useRouter();
