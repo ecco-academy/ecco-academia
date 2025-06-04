@@ -12,6 +12,12 @@ import { course } from "@/data/courses";
 import React from "react";
 import { CourseDetailsCard } from "@/components/ecco/courses/CourseDetailsCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 interface CourseDetailsPageProps {
   params: { courseId: string };
 }
@@ -49,24 +55,56 @@ CourseDetailsPageProps) {
               lessonsCount={course.lessonsCount}
             />
           </div>
-          <Tabs defaultValue="account" className="w-full">
+          <Tabs defaultValue="modules" className="w-full">
             <TabsList className="gap-6 w-full">
-              <TabsTrigger className="text-lg  text-start px-0" value="account">
+              <TabsTrigger className="text-lg  text-start px-0" value="modules">
                 Módulos
               </TabsTrigger>
-              <TabsTrigger
-                className="text-lg  text-start px-0"
-                value="password"
-              >
+              {/* <TabsTrigger className="text-lg  text-start px-0" value="reviews">
                 Testimonios
-              </TabsTrigger>
+              </TabsTrigger> */}
             </TabsList>
-            <TabsContent value="account">
-              Make changes to your account here.
+            <TabsContent value="modules">
+              <Accordion type="single" collapsible>
+                {course.modules?.map((module) => (
+                  <AccordionItem
+                    key={module._id}
+                    value={`module-${module._id}`}
+                  >
+                    <AccordionTrigger className="bg-gray-200/60 px-5 mb-2 text-md">
+                      <span className="text-gray-dark w-fit">
+                        <span className="me-4 text-md font-bold">
+                          Modulo {module.number}
+                        </span>
+                        <span className="block md:inline font-normal">
+                          {module.title}
+                        </span>
+                      </span>{" "}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-md px-4">
+                      <ul className="space-y-2 text-md">
+                        {module.lessons.map((lesson) => (
+                          <li
+                            key={lesson._id}
+                            className="text-md flex items-center justify-between"
+                          >
+                            <span className="text-gray-dark w-fit text-sm font-semibold text-md mb-1">
+                              {lesson.title}
+                            </span>
+                            <span className="text-primary-dark text-sm font-semibold">
+                              {lesson.duration}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </TabsContent>
-            <TabsContent value="password">
+            {/* <TabsContent value="reviews">
               Change your password here.
-            </TabsContent>
+            </TabsContent> */}
           </Tabs>
         </div>
         <div className="col-span-1 hidden lg:block">

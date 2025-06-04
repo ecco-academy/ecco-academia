@@ -3,7 +3,8 @@ import { CourseLevel } from "@/lib/types/Course";
 import React from "react";
 import { Timer } from "lucide-react";
 import clsx from "clsx";
-
+import { Book } from "lucide-react";
+import { ChartNoAxesColumnIncreasing } from "lucide-react";
 export interface CourseDetailsCardProps {
   className?: string;
   timeDuration?: string;
@@ -31,8 +32,9 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
         </div>
         <ul className="mt-4 w-full relative rounded-md border  flex justify-between overflow-hidden text-gray-dark">
           <li className="w-full">
-            <header className="flex justify-center w-full  bg-gray-200 py-1 text-xs">
-              Lecciones
+            <header className="flex justify-center items-center w-full gap-[5px]  bg-gray-200 text-xs py-2">
+              <Book className="mt-[1px]" size={10} />{" "}
+              <span className="leading-none">Lecciones</span>
             </header>
             <p className="flex justify-center w-full bg-gray-100 py-2 font-medium">
               {lessonsCount} clases
@@ -42,8 +44,9 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
             <div className="h-full bg-gray-200 w-[1px]"></div>
           </li>
           <li className="w-full">
-            <header className="flex justify-center w-full  bg-gray-200 py-1 text-xs">
-              Nivel
+            <header className="flex justify-center items-center w-full gap-[5px]  bg-gray-200 text-xs py-2">
+              <ChartNoAxesColumnIncreasing className="mt-[1px]" size={11} />{" "}
+              <span className="leading-none">Nivel</span>
             </header>
             <p className="flex justify-center w-full bg-gray-100 py-2 font-medium">
               {level ? <span className="capitalize">{level}</span> : "N/A"}

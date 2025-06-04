@@ -13,7 +13,7 @@ export interface Course {
     rating?: number;
     category?: string;
     reviews?: number;
-    chapters?: Chapter[];
+    modules?: Module[];
     hotmartUrl?: string;
     createdAt?: string;
     updatedAt?: string;
@@ -30,7 +30,7 @@ export interface Instructor {
     courses?: Course[];
 }
 
-export interface Chapter {
+export interface Module {
     _id: string;
     title: string;
     description: string;
@@ -46,5 +46,6 @@ export interface Lesson {
     duration: string;
     videoUrl: string;
     courseId: string;
-    chapterNumber: string;
+    moduleId: string;
+    number: string;
 }
