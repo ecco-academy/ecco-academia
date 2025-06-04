@@ -7,10 +7,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Card, CardContent } from "@/components/ui/card";
 import { Course } from "@/lib/types/Course";
 import { course } from "@/data/courses";
 import React from "react";
+import { CourseDetailsCard } from "@/components/ecco/courses/CourseDetailsCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 interface CourseDetailsPageProps {
   params: { courseId: string };
 }
@@ -37,18 +38,43 @@ CourseDetailsPageProps) {
               }}
             />
           </div>
-          <h2 className="font-bold text-header text-[22px] lg:text-2xl">
+          <h2 className="font-bold text-gray-dark text-[22px] lg:text-2xl mb-2">
             {course.title}
           </h2>
+          <p className="text-gray-dark mb-6">{course.description}</p>
+          <div className="lg:hidden mb-6">
+            <CourseDetailsCard
+              timeDuration={course.duration}
+              level={course.level}
+              lessonsCount={course.lessonsCount}
+            />
+          </div>
+          <Tabs defaultValue="account" className="w-full">
+            <TabsList className="gap-6 w-full">
+              <TabsTrigger className="text-lg  text-start px-0" value="account">
+                Módulos
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-lg  text-start px-0"
+                value="password"
+              >
+                Testimonios
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="account">
+              Make changes to your account here.
+            </TabsContent>
+            <TabsContent value="password">
+              Change your password here.
+            </TabsContent>
+          </Tabs>
         </div>
-        <div className="col-span-1">
-          <Card className="pt-4">
-            <CardContent>
-              <span className="font-semibold text-lg text-header">
-                Detalles del curso:
-              </span>
-            </CardContent>
-          </Card>
+        <div className="col-span-1 hidden lg:block">
+          <CourseDetailsCard
+            timeDuration={course.duration}
+            level={course.level}
+            lessonsCount={course.lessonsCount}
+          />
         </div>
       </div>
     </div>

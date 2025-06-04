@@ -6,12 +6,13 @@ export interface Course {
     slug: string;
     price: number;
     instructor: Instructor;
-    
+    level?: CourseLevel;
+    lessonsCount?: number;
+
     duration?: string;
     rating?: number;
     category?: string;
     reviews?: number;
-    level?: string;
     chapters?: Chapter[];
     hotmartUrl?: string;
     createdAt?: string;
@@ -19,6 +20,7 @@ export interface Course {
     isFree?: boolean;
 }
 
+export type CourseLevel = "beginner" | "intermediate" | "advanced";
 export interface Instructor {
     _id: string;
     name: string;

@@ -16,4 +16,6 @@ export const course: Course = {
     bio: "Experta en masoterapia",
     _id: "123",
   },
+  level: 'advanced',
+  lessonsCount: 25,
 };

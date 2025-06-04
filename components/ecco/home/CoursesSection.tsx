@@ -25,7 +25,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
       )}
     >
       <div className="flex items-end justify-between w-full mb-4 lg:mb-5">
-        <h1 className="font-semibold text-header text-[22px] lg:text-2xl">
+        <h1 className="font-semibold text-gray-dark text-[22px] lg:text-2xl">
           {title}
         </h1>
         {/* <Link
