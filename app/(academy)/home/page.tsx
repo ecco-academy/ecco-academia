@@ -11,6 +11,7 @@ import {
   documentsSectionContent,
   personalizedServiceContent,
 } from "@/content/home";
+import React from "react";
 
 export default function HomePage() {
   const router = useRouter();
@@ -26,7 +27,6 @@ export default function HomePage() {
   const handleSelectPersonalizedAdvice = () => {
     router.push("/personalized-advice");
   };
-
   return (
     <div className="pb-10 lg:pb-20">
       <BannerSection {...bannerSectionContent} />

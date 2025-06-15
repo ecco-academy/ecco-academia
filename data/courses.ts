@@ -159,12 +159,13 @@ export const course: Course = {
     "Desarrolla tu potencial como masoterapeuta y domina el arte y el negocio del masaje (una guía paso a paso de cero a experto.) Aprende a realizar un masaje completo de cuerpo entero, con técnicas avanzadas y consejos prácticos.",
 
   slug: "metodo-madem-mapa-de-masaje",
-  price: 21.56,
+  price: 199.99,
   instructor: {
     name: "Maga Abuin",
-    avatarUrl: "/logo.png",
+    avatarUrl: "/profile.png",
     bio: "Experta en masoterapia",
     _id: "123",
+    description: "Con más de 8 años de experiencia en el campo del masaje terapéutico, he ayudado a cientos de personas a mejorar su bienestar físico y emocional.",
   },
   level: 'advanced',
   lessonsCount: 25,

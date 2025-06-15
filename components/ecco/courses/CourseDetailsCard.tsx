@@ -1,3 +1,4 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
 import { CourseLevel } from "@/lib/types/Course";
 import React from "react";
@@ -10,18 +11,20 @@ export interface CourseDetailsCardProps {
   timeDuration?: string;
   lessonsCount?: number;
   level?: CourseLevel;
+  children?: React.ReactNode;
 }
 export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
   className,
   timeDuration,
   lessonsCount,
   level,
+  children,
 }) => {
   return (
     <Card className={clsx("pt-4", className)}>
-      <CardContent>
+      <CardContent className="flex flex-col justify-center h-full">
         <h3 className="font-semibold text-lg text-gray-dark mb-3 block">
-          Detalles del curso:
+          Detalles del curso
         </h3>
         <div className="w-full flex justify-between text-gray-base">
           <span className="flex items-center gap-1">
@@ -53,6 +56,7 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
             </p>
           </li>
         </ul>
+        {children}
       </CardContent>
     </Card>
   );

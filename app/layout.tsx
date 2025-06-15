@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { esMX } from "@clerk/localizations";
+import React from "react";
 
 const epilogueSans = Epilogue({
   variable: "--font-geist-sans",
@@ -20,22 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      afterSignOutUrl={"/home"}
-      localization={{
-        ...esMX,
-        signIn: {
-          start: {
-            titleCombined: "Bienvenido a {{applicationName}}",
-          },
-        },
-      }}
-    >
-      <html lang="en">
-        <body className={`${epilogueSans.variable} antialiased`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className={`${epilogueSans.variable} antialiased`}>{children}</body>
+    </html>
   );
 }

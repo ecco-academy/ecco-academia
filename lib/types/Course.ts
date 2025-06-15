@@ -26,7 +26,7 @@ export interface Instructor {
     name: string;
     avatarUrl: string;
     bio?: string;
-
+    description?: string;
     courses?: Course[];
 }
 

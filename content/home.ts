@@ -2,6 +2,7 @@ import { BannerSectionProps } from "@/components/ecco/home/BannerSection";
 import { CoursesSectionProps } from "@/components/ecco/home/CoursesSection";
 import { DocumentsSectionProps } from "@/components/ecco/home/DocumentsSection";
 import { PersonalizedAdviceCardProps } from "@/components/ecco/home/PersonalizedAdviceCard";
+import { course } from "@/data/courses";
 
 export const bannerSectionContent: BannerSectionProps = {
   title: "Bienvenido a Ecco Academia",
@@ -14,25 +15,7 @@ export const bannerSectionContent: BannerSectionProps = {
 
 export const coursesSectionContent: Omit<CoursesSectionProps, "onSelectCourse"> = {
   title: "Cursos destacados",
-  courses: [
-    {
-      duration: "1h 30m",
-      _id: "123",
-      imageUrl: "/courseMassage.png",
-      title: "Método MADEM, Mapa de masaje",
-      description:
-        "Desarrolla tu potencial como masoterapeuta y domina el arte y el negocio del masaje (una guía paso a paso de cero a experto.) Aprende a realizar un masaje completo de cuerpo entero, desde la cabeza hasta los pies, con técnicas avanzadas y consejos prácticos.",
-
-      slug: "metodo-madem-mapa-de-masaje",
-      price: 21.56,
-      instructor: {
-        name: "Maga Abuin",
-        avatarUrl: "/logo.png",
-        bio: "Experta en masoterapia",
-        _id: "123",
-      },
-    },
-  ],
+  courses: [course],
 };
 
 export const documentsSectionContent: Omit<DocumentsSectionProps, "onSelectDocument"> =

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Image } from "@/components/ui/image";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import React from "react";
 import { LogIn } from "lucide-react";
 import Link from "next/link";
@@ -19,17 +18,10 @@ const Header: React.FC = () => (
       </Link>
     </div>
     <nav>
-      <SignedOut>
-        <SignInButton mode="redirect">
-          <Button variant="ghost" className=" text-gray-700">
-            Entrar
-            <LogIn />
-          </Button>
-        </SignInButton>
-      </SignedOut>
-      <SignedIn>
-        <UserButton showName />
-      </SignedIn>
+      <Button variant="ghost" className=" text-gray-700">
+        Entrar
+        <LogIn />
+      </Button>
     </nav>
   </header>
 );
