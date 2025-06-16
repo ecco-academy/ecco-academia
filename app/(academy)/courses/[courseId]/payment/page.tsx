@@ -13,7 +13,7 @@ export default async function CoursePaymentPage({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user?.id) redirect(`/auth/sign-in`);
+  if (!user?.id) redirect(`/auth/login`);
   return (
     <div className="p-20">
       <h1 className="mb-6">Eeste es el pago del curso: {courseId}</h1>

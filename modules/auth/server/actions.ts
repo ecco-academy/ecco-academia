@@ -2,21 +2,17 @@
 
 
 import { createClient } from '@/lib/utils/supabase/server'
+import {  SignInWithPasswordCredentials, SignUpWithPasswordCredentials } from '@supabase/supabase-js'
+import { AuthResponseDto, LoginResponseDto } from '../types/Auth'
 
-export async function login(formData: FormData) {
+
+
+export async function login(data: SignInWithPasswordCredentials): Promise<LoginResponseDto> {
   const supabase = await createClient()
-  const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  }
   return await supabase.auth.signInWithPassword(data)
 }
 
-export async function signup(formData: FormData) {
+export async function signUp(data: SignUpWithPasswordCredentials): Promise<AuthResponseDto> {
   const supabase = await createClient()
-  const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  }
   return await supabase.auth.signUp(data)
 }
