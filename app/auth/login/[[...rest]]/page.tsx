@@ -37,50 +37,46 @@ export default function LoginPage() {
       setLoadingLogin(false);
     }
   };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <Card className="w-fit max-w-[400px]">
-        <CardContent>
-          <Image
-            src="/logo.png"
-            alt="Ecco Academia Logo"
-            width={32}
-            height={32}
-            className="mx-auto mb-2"
+    <Card className="w-fit max-w-[400px]">
+      <CardContent>
+        <Image
+          src="/logo.png"
+          alt="Ecco Academia Logo"
+          width={32}
+          height={32}
+          className="mx-auto mb-2"
+        />
+        <h2 className="text-xl font-bold mb-2 text-center ">Iniciar Sesión</h2>
+        <p className="text-sm text-gray-600 mb-6">
+          Bienvenido a Ecco Academia! Introduce tus credenciales para comenzar.
+        </p>
+        <div>
+          {errorMessage && (
+            <Alert variant="destructive" className="mb-4">
+              <AlertTitle>Error al iniciar sesión</AlertTitle>
+              <AlertDescription>
+                {errorMessage || "Por favor, verifica tus credenciales."}
+              </AlertDescription>
+            </Alert>
+          )}
+          <LoginForm
+            onSubmit={handleLogin}
+            submitButtonText="Iniciar Sesión"
+            loading={loadingLogin}
           />
-          <h2 className="text-xl font-bold mb-2 text-center ">
-            Iniciar Sesión
-          </h2>
-          <p className="text-sm text-gray-600 mb-6">
-            Bienvenido a Ecco Academia! Introduce tus credenciales para
-            comenzar.
-          </p>
-          <div>
-            {errorMessage && (
-              <Alert variant="destructive" className="mb-4">
-                <AlertTitle>Error al iniciar sesión</AlertTitle>
-                <AlertDescription>
-                  {errorMessage || "Por favor, verifica tus credenciales."}
-                </AlertDescription>
-              </Alert>
-            )}
-            <LoginForm
-              onSubmit={handleLogin}
-              submitButtonText="Iniciar Sesión"
-              loading={loadingLogin}
-            />
-          </div>
-          <span className="text-sm text-gray-500 mt-4 block text-center">
-            ¿No tienes una cuenta?{" "}
-            <Link
-              href="/auth/register"
-              className="text-black hover:underline font-semibold"
-            >
-              Crear cuenta
-            </Link>
-          </span>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+        <span className="text-sm text-gray-500 mt-4 block text-center">
+          ¿No tienes una cuenta?{" "}
+          <Link
+            href="/auth/register"
+            className="text-black hover:underline font-semibold"
+          >
+            Crear cuenta
+          </Link>
+        </span>
+      </CardContent>
+    </Card>
   );
 }
