@@ -2,6 +2,7 @@
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -56,8 +57,13 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
             <FormItem>
               <FormLabel>Nombre</FormLabel>
               <FormControl>
-                <Input placeholder="Nombre" {...field} type="text" />
+                <Input
+                  placeholder="Tu nombre completo"
+                  {...field}
+                  type="text"
+                />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -68,8 +74,13 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
             <FormItem>
               <FormLabel>Correo</FormLabel>
               <FormControl>
-                <Input placeholder="Correo" {...field} type="email" />
+                <Input
+                  placeholder="Tu correo electrónico"
+                  {...field}
+                  type="email"
+                />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -80,9 +91,12 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
             <FormItem>
               <FormLabel>Contraseña</FormLabel>
               <FormControl>
-                <Input placeholder="Contraseña" {...field} type="text" />
+                <Input placeholder="Tu contraseña" {...field} type="text" />
               </FormControl>
               <FormMessage />
+              <FormDescription>
+                La contraseña debe tener al menos 6 caracteres.
+              </FormDescription>
             </FormItem>
           )}
         />

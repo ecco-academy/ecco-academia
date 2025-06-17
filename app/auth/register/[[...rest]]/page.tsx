@@ -7,14 +7,16 @@ import {
   RegisterForm,
   RegisterFormFields,
 } from "@/modules/auth/components/RegisterForm";
+import Image from "@/components/ui/image";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [loadingAuth, setLoadingAuth] = useState(false);
+  const [loadingRegister, setLoadingRegister] = useState(false);
 
   const handleRegister = async (data: RegisterFormFields) => {
     try {
-      setLoadingAuth(true);
+      setLoadingRegister(true);
       const res = await signUp({
         email: data.email,
         password: data.password,
@@ -37,14 +39,27 @@ export default function LoginPage() {
         "Por favor verifique su conexión a internet y si persiste el error contacte con soporte"
       );
     } finally {
-      setLoadingAuth(false);
+      setLoadingRegister(false);
     }
   };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <Card className="w-fit">
+      <Card className="w-fit max-w-[400px]">
         <CardContent>
-          <div className="min-w-[400px]">
+          <Image
+            src="/logo.png"
+            alt="Ecco Academia Logo"
+            width={32}
+            height={32}
+            className="mx-auto mb-2"
+          />
+          <h2 className="text-xl font-bold mb-2 text-center ">Crear cuenta</h2>
+          <p className="text-sm text-gray-600 mb-6">
+            Bienvenido a Ecco Academia! Una vez creada tu cuenta, podrás acceder
+            a todos los cursos y recursos disponibles.
+          </p>
+          <div>
             {errorMessage && (
               <Alert variant="destructive" className="mb-4">
                 <AlertTitle>Error al iniciar sesión</AlertTitle>
@@ -53,12 +68,17 @@ export default function LoginPage() {
                 </AlertDescription>
               </Alert>
             )}
-            <RegisterForm
-              onSubmit={handleRegister}
-              submitButtonText="Iniciar Sesión"
-              loading={loadingAuth}
-            />
+            <RegisterForm onSubmit={handleRegister} loading={loadingRegister} />
           </div>
+          <span className="text-sm text-gray-500 mt-4 block text-center">
+            ¿Ya tienes una cuenta?{" "}
+            <Link
+              href="/auth/login"
+              className="text-black hover:underline font-semibold"
+            >
+              Iniciar sesión
+            </Link>
+          </span>
         </CardContent>
       </Card>
     </div>

@@ -52,7 +52,7 @@ export const LoginForm: React.FC<AuthFormProps> = ({
             <FormItem>
               <FormLabel>Correo</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Tu correo electrónico" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -64,7 +64,7 @@ export const LoginForm: React.FC<AuthFormProps> = ({
             <FormItem>
               <FormLabel>Contraseña</FormLabel>
               <FormControl>
-                <Input placeholder="Contraseña" {...field} type="text" />
+                <Input placeholder="Tu contraseña" {...field} type="text" />
               </FormControl>
               <FormMessage />
             </FormItem>
