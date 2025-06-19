@@ -40,7 +40,10 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center max-w-36 md:max-w-none">
             <Avatar className="me-2 mt-1">
-              <AvatarImage src={course.instructor.avatarUrl} alt="@shadcn" />
+              <AvatarImage
+                src={course.instructor.avatarUrl}
+                alt={course.instructor.name}
+              />
             </Avatar>
             <div>
               <span className="text-sm text-gray-500 font-semibold">
