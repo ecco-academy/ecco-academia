@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Header from "../../components/ecco/header";
+import { HeaderServer } from "@/modules/header/components/header-server";
 
 export const metadata: Metadata = {
   title: "Ecco Academia",
@@ -14,7 +14,7 @@ export default function AcademyLayout({
 }>) {
   return (
     <div>
-      <Header />
+      <HeaderServer />
       {children}
     </div>
   );

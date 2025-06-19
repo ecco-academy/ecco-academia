@@ -4,15 +4,14 @@ import React from "react";
 import { LogIn } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
+import { User } from "@supabase/supabase-js";
 
 export interface HeaderProps {
   className?: string;
-  hideSignInButton?: boolean;
+  hideMenu?: boolean;
+  user?: User | null;
 }
-const Header: React.FC<HeaderProps> = ({
-  className,
-  hideSignInButton = false,
-}) => (
+const Header: React.FC<HeaderProps> = ({ className, hideMenu, user }) => (
   <header
     className={clsx(
       "flex items-center justify-between px-4 md:px-8 lg:px-10 py-2 rounded-b-3xl bg-white fixed top-0 z-50 shadow-xs min-h-10 lg:min-h-12 w-full",
@@ -30,16 +29,27 @@ const Header: React.FC<HeaderProps> = ({
         />
       </Link>
     </div>
-    <nav>
-      {!hideSignInButton && (
-        <Link href="/auth/login" className="text-gray-700 hover:text-gray-900">
-          <Button variant="ghost" className="text-gray-700">
-            Entrar
-            <LogIn />
-          </Button>
-        </Link>
-      )}
-    </nav>
+    {!hideMenu && (
+      <nav>
+        {user ? (
+          <span>
+            <span className="text-gray-700 hover:text-gray-900">
+              {user.email}
+            </span>
+          </span>
+        ) : (
+          <Link
+            href="/auth/login"
+            className="text-gray-700 hover:text-gray-900"
+          >
+            <Button variant="ghost" className="text-gray-700">
+              Entrar
+              <LogIn />
+            </Button>
+          </Link>
+        )}
+      </nav>
+    )}
   </header>
 );
 

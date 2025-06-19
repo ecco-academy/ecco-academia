@@ -13,6 +13,7 @@ export default async function CoursePaymentPage({
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
   if (!user?.id) redirect(`/auth/login`);
   return (
     <div className="p-20">
