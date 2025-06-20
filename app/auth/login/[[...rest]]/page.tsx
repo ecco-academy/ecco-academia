@@ -9,8 +9,10 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Image from "@/components/ui/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loadingLogin, setLoadingLogin] = useState(false);
 
@@ -21,8 +23,8 @@ export default function LoginPage() {
         email: data.email,
         password: data.password,
       });
-      if (res.data.user?.action_link) {
-        console.log("User action link:", res.data.user.action_link);
+      if (res.data.user) {
+        router.push("/home");
       }
       if (res.error) {
         setErrorMessage(res.error.message);

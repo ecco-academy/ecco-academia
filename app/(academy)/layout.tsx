@@ -1,20 +1,26 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import { HeaderServer } from "@/modules/header/components/header-server";
+import { createClient } from "@/lib/utils/supabase/server";
+import Header from "@/modules/header/components/header";
 
 export const metadata: Metadata = {
   title: "Ecco Academia",
   description: "Academia de masaje y bienestar",
 };
 
-export default function AcademyLayout({
+export default async function AcademyLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <div>
-      <HeaderServer />
+      <Header user={user} />
       {children}
     </div>
   );
