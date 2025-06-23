@@ -1,7 +1,7 @@
-import { BannerSectionProps } from "@/components/ecco/home/BannerSection";
-import { CoursesSectionProps } from "@/components/ecco/home/CoursesSection";
-import { DocumentsSectionProps } from "@/components/ecco/home/DocumentsSection";
-import { PersonalizedAdviceCardProps } from "@/components/ecco/home/PersonalizedAdviceCard";
+import { BannerSectionProps } from "@/modules/home/components/BannerSection";
+import { CoursesSectionProps } from "@/modules/home/components/CoursesSection";
+import { DocumentsSectionProps } from "@/modules/home/components/DocumentsSection";
+import { PersonalizedAdviceCardProps } from "@/modules/home/components/PersonalizedAdviceCard";
 import { course } from "@/data/courses";
 
 export const bannerSectionContent: BannerSectionProps = {

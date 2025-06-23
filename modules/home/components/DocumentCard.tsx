@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "@/components/ui/image";
-import { Document } from "@/lib/types/Document";
+import { Document } from "@/modules/document/types/Document";
 import React from "react";
 export interface DocumentCardProps {
   document: Document;

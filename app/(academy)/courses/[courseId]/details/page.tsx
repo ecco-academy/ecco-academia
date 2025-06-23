@@ -1,4 +1,4 @@
-import VideoPlayer from "@/components/ecco/courses/VidePlayer";
+import VideoPlayer from "@/modules/course/components/VidePlayer";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,10 +7,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Course } from "@/lib/types/Course";
+import { Course } from "@/modules/course/types/Course";
 import { course } from "@/data/courses";
 import React from "react";
-import { CourseDetailsCard } from "@/components/ecco/courses/CourseDetailsCard";
+import { CourseDetailsCard } from "@/modules/course/components/CourseDetailsCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -18,8 +18,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { InstructorDetails } from "@/components/ecco/courses/InstructorDetails";
-import { CoursePriceCard } from "@/components/ecco/courses/CoursePriceCard";
+import { InstructorDetails } from "@/modules/course/components/InstructorDetails";
+import { CoursePriceCard } from "@/modules/course/components/CoursePriceCard";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";

@@ -1,10 +1,10 @@
 "use client";
 
-import { BannerSection } from "../../../components/ecco/home/BannerSection";
+import { BannerSection } from "../../../modules/home/components/BannerSection";
 import { useRouter } from "next/navigation";
-import { CoursesSection } from "@/components/ecco/home/CoursesSection";
-import { DocumentsSection } from "@/components/ecco/home/DocumentsSection";
-import { PersonalizedAdviceCard } from "@/components/ecco/home/PersonalizedAdviceCard";
+import { CoursesSection } from "@/modules/home/components/CoursesSection";
+import { DocumentsSection } from "@/modules/home/components/DocumentsSection";
+import { PersonalizedAdviceCard } from "@/modules/home/components/PersonalizedAdviceCard";
 import {
   bannerSectionContent,
   coursesSectionContent,

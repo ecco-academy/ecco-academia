@@ -1,4 +1,4 @@
-import { Course, Module } from "@/lib/types/Course";
+import { Course, Module } from "@/modules/course/types/Course";
 
 const modules: Module[] = [
   {
