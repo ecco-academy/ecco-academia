@@ -2,7 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-export default function HotmartCheckout() {
+export interface HotmartCheckoutProps {
+  userEmail: string;
+  userName: string;
+  hotmartOfferCode: string;
+}
+export default function HotmartCheckout(props: HotmartCheckoutProps) {
   const checkoutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -13,10 +18,10 @@ export default function HotmartCheckout() {
     script.onload = () => {
       //@ts-ignore
       const elements = window.checkoutElements?.init("inlineCheckout", {
-        offer: "v1xy9yp2",
+        offer: props.hotmartOfferCode,
         prefilledInfo: {
-          name: "Yoshio Mack",
-          email: "support.test.goe1oxfc@hotmart.com",
+          name: props.userName,
+          email: props.userEmail,
           doc: "1234567909",
           zip: "30110056",
           phoneac: "31",

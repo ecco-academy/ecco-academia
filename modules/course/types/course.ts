@@ -13,12 +13,12 @@ export interface Course {
     lessonsCount?: number;
 
     duration?: string;
-    rating?: number;
-    category?: string;
-    reviews?: number;
     modules?: Module[];
     updatedAt?: string;
-    isFree?: boolean;
+    // category?: string;
+    // reviews?: number;
+    // rating?: number;
+    // isFree?: boolean;
 }
 
 export type CourseLevel = "beginner" | "intermediate" | "advanced";

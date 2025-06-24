@@ -2,13 +2,24 @@ import React from "react";
 import { createClient } from "@/lib/utils/supabase/server";
 import { redirect } from "next/navigation";
 import HotmartCheckout from "@/modules/checkout/components/hotmart-checkout-form";
-interface CoursepaymentPageProps {
+import { getCourseById } from "@/modules/course/server/action";
+import { Course } from "@/modules/course/types/course";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Alert } from "@/components/ui/alert";
+interface CoursePaymentPageProps {
   params: { courseId: string };
 }
 
 export default async function CoursePaymentPage({
   params,
-}: CoursepaymentPageProps) {
+}: CoursePaymentPageProps) {
   const { courseId } = await params;
   const supabase = await createClient();
   const {
@@ -16,10 +27,55 @@ export default async function CoursePaymentPage({
   } = await supabase.auth.getUser();
 
   if (!user?.id) redirect(`/auth/login`);
+  const course = await getCourseById(courseId);
+
   return (
-    <div className="p-20">
-      <h1 className="mb-6">Eeste es el pago del curso: {courseId}</h1>
-      <HotmartCheckout />
+    <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
+      {!course ? (
+        <Alert className="mb-4">No se encontró el curso solicitado.</Alert>
+      ) : (
+        <>
+          <CheckoutPageBreadcrumb course={course} className="mb-8 lg:mb-12" />
+          <div className="max-w-2xl mx-auto">
+            <HotmartCheckout
+              userEmail={user.email || ""}
+              userName={user?.user_metadata?.first_name || ""}
+              hotmartOfferCode={course?.hotmartCode || ""}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
+interface CheckoutPageBreadcrumbProps {
+  course: Course;
+  className?: string;
+}
+
+const CheckoutPageBreadcrumb: React.FC<CheckoutPageBreadcrumbProps> = ({
+  course,
+  className,
+}) => {
+  return (
+    <Breadcrumb className={className}>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/home">Inicio</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Cursos</BreadcrumbPage>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>{course.title}</BreadcrumbPage>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Pago</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+};
