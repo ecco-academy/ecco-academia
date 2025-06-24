@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 import React, { ReactNode } from "react";

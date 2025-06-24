@@ -1,5 +1,5 @@
 import Image from "@/components/ui/image";
-import { Instructor } from "@/modules/course/types/Course";
+import { Instructor } from "@/modules/course/types/course";
 import clsx from "clsx";
 
 export interface InstructorDetailsProps {
@@ -20,12 +20,14 @@ export const InstructorDetails: React.FC<InstructorDetailsProps> = ({
           className="w-14 h-14 rounded-xl"
           width={65}
           height={65}
-          src={instructor.avatarUrl}
-          alt={instructor.name}
+          src={instructor?.avatarUrl || "/profile.png"}
+          alt={instructor?.name || "Maga Abuin"}
         />
         <div>
-          <h3 className="font-semibold text-primary-dark">{instructor.name}</h3>
-          <p className="text-gray-dark text-sm">{instructor.bio}</p>
+          <h3 className="font-semibold text-primary-dark">
+            {instructor?.name}
+          </h3>
+          <p className="text-gray-dark text-sm">{instructor?.bio}</p>
         </div>
       </div>
       <p>{instructor?.description}</p>

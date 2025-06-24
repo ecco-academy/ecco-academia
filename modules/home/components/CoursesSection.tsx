@@ -1,8 +1,8 @@
-import { Course } from "@/modules/course/types/Course";
+import { Course } from "@/modules/course/types/course";
 import React, { ReactNode } from "react";
 // import { ChevronsRight } from "lucide-react";
 // import Link from "next/link";
-import { CourseCard } from "./CourseCard";
+import { CourseCard } from "./course-card";
 import clsx from "clsx";
 export interface CoursesSectionProps {
   courses: Course[];
@@ -37,13 +37,16 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({
         </Link> */}
       </div>
       <div className="flex justify-center w-full">
-        {courses?.map((course) => (
-          <CourseCard
-            key={course._id}
-            course={course}
-            onSelectCourse={onSelectCourse}
-          />
-        ))}
+        {courses?.map(
+          (course) =>
+            course.isMain && (
+              <CourseCard
+                key={course.id}
+                course={course}
+                onSelectCourse={onSelectCourse}
+              />
+            )
+        )}
       </div>
     </section>
   );

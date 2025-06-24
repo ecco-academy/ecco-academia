@@ -1,10 +1,13 @@
 export interface Course {
-    _id: string;
-    imageUrl: string;
-    title: string;
-    description: string;
-    slug: string;
-    price: number;
+    id: string; //
+    title: string; //
+    description: string; //
+    isMain?: boolean; //
+    hotmartCode?: string; //
+    createdAt?: string; //
+    slug: string; //
+    price: number; //
+    imageUrl: string; //
     instructor: Instructor;
     level?: CourseLevel;
     lessonsCount?: number;
@@ -14,13 +17,12 @@ export interface Course {
     category?: string;
     reviews?: number;
     modules?: Module[];
-    hotmartUrl?: string;
-    createdAt?: string;
     updatedAt?: string;
     isFree?: boolean;
 }
 
 export type CourseLevel = "beginner" | "intermediate" | "advanced";
+
 export interface Instructor {
     _id: string;
     name: string;

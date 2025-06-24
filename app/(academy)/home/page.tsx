@@ -1,5 +1,4 @@
 "use client";
-
 import { BannerSection } from "../../../modules/home/components/BannerSection";
 import { useRouter } from "next/navigation";
 import { CoursesSection } from "@/modules/home/components/CoursesSection";
@@ -12,8 +11,10 @@ import {
   personalizedServiceContent,
 } from "@/content/home";
 import React from "react";
+import { useCourses } from "@/modules/home/hooks/useCourses";
 
 export default function HomePage() {
+  const { courses } = useCourses();
   const router = useRouter();
 
   const handleSelectCourse = (courseId: string) => {
@@ -27,12 +28,14 @@ export default function HomePage() {
   const handleSelectPersonalizedAdvice = () => {
     router.push("/personalized-advice");
   };
+
   return (
     <div className="pb-10 lg:pb-20">
       <BannerSection {...bannerSectionContent} />
       <div className=" max-w-screen-full mx-auto">
         <CoursesSection
           {...coursesSectionContent}
+          courses={courses || []}
           onSelectCourse={handleSelectCourse}
         />
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 pt-2 p-4">

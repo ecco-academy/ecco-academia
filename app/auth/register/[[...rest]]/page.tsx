@@ -26,9 +26,6 @@ export default function LoginPage() {
           },
         },
       });
-      if (res.data.user?.action_link) {
-        console.log("User action link:", res.data.user.action_link);
-      }
       if (res.error) {
         setErrorMessage(res.error.message);
         return;

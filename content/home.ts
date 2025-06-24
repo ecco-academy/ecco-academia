@@ -13,9 +13,8 @@ export const bannerSectionContent: BannerSectionProps = {
   mobileImageAlt: "Imagen de estiramiento por Magui",
 };
 
-export const coursesSectionContent: Omit<CoursesSectionProps, "onSelectCourse"> = {
+export const coursesSectionContent: Omit<CoursesSectionProps, "onSelectCourse" | "courses"> = {
   title: "Cursos destacados",
-  courses: [course],
 };
 
 export const documentsSectionContent: Omit<DocumentsSectionProps, "onSelectDocument"> =

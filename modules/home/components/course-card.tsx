@@ -1,7 +1,8 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Image } from "@/components/ui/image";
-import { Course } from "@/modules/course/types/Course";
+import { Course } from "@/modules/course/types/course";
 import React from "react";
 import clsx from "clsx";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -18,12 +19,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({
 }) => {
   return (
     <Card
-      key={course._id}
+      key={course.id}
       className={clsx(
         "flex flex-col md:flex-row justify-center w-full  overflow-hidden gap-0 p-0 h-full cursor-pointer",
         className
       )}
-      onClick={() => onSelectCourse(course._id)}
+      onClick={() => onSelectCourse(course.id)}
     >
       <Image
         src={course.imageUrl}
@@ -41,20 +42,20 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           <div className="flex items-center max-w-36 md:max-w-none">
             <Avatar className="me-2 mt-1">
               <AvatarImage
-                src={course.instructor.avatarUrl}
-                alt={course.instructor.name}
+                src={course?.instructor?.avatarUrl || "/profile.png"}
+                alt={course?.instructor?.name || "Maga Abuin"}
               />
             </Avatar>
             <div>
               <span className="text-sm text-gray-500 font-semibold">
-                Por <span>{course.instructor.name}</span>
+                Por <span>{course?.instructor?.name || "Maga Abuin"}</span>
               </span>
               <span className="block text-xs text-gray-400 leading-3">
-                {course.instructor?.bio}
+                {course?.instructor?.bio || "Instructora de Masaje y Bienestar"}
               </span>
             </div>
           </div>
-          <Button variant="outline" onClick={() => onSelectCourse(course._id)}>
+          <Button variant="outline" onClick={() => onSelectCourse(course.id)}>
             Ver detalles
           </Button>
         </div>

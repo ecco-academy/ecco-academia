@@ -1,4 +1,4 @@
-import { Course, Module } from "@/modules/course/types/Course";
+import { Course, Module } from "@/modules/course/types/course";
 
 const modules: Module[] = [
   {
@@ -152,7 +152,7 @@ const modules: Module[] = [
 
 export const course: Course = {
   duration: "1h 30m",
-  _id: "123",
+  id: "123",
   imageUrl: "/courseMassage.png",
   title: "Método MADEM, Mapa de masaje",
   description:

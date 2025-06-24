@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 import { Document } from "@/modules/document/types/Document";
 import clsx from "clsx";

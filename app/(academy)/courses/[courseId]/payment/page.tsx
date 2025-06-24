@@ -1,6 +1,7 @@
 import React from "react";
 import { createClient } from "@/lib/utils/supabase/server";
 import { redirect } from "next/navigation";
+import HotmartCheckout from "@/modules/checkout/components/hotmart-checkout-form";
 interface CoursepaymentPageProps {
   params: { courseId: string };
 }
@@ -18,6 +19,7 @@ export default async function CoursePaymentPage({
   return (
     <div className="p-20">
       <h1 className="mb-6">Eeste es el pago del curso: {courseId}</h1>
+      <HotmartCheckout />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import HotmartCheckout from "@/modules/checkout/components/hotmart-checkout-form";
 import { redirect } from "next/navigation";
 interface CoursePageProps {
   params: { courseId: string };
