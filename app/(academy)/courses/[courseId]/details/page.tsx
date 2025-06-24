@@ -30,7 +30,8 @@ interface CourseDetailsPageProps {
 export default async function CourseDetailsPage({
   params,
 }: CourseDetailsPageProps) {
-  const course = await getCourseById(params.courseId);
+  const { courseId } = await params;
+  const course = await getCourseById(courseId);
 
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
