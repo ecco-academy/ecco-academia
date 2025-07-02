@@ -1,10 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "@/components/ui/image";
-import { Document } from "@/modules/document/types/Document";
+import { Document } from "@/modules/document/types/document";
 import React from "react";
 export interface DocumentCardProps {
   document: Document;
-  onSelectDocument: (documentId: string) => void;
+  onSelectDocument: (document: Document) => void;
 }
 
 export const DocumentCard: React.FC<DocumentCardProps> = ({
@@ -13,26 +13,28 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
 }) => {
   return (
     <Card
-      key={document._id}
+      key={document.id}
       className="gap-0 p-0 cursor-pointer"
-      onClick={() => onSelectDocument(document._id)}
+      onClick={() => onSelectDocument(document)}
     >
       <CardContent className="flex p-3 gap-5">
         <Image
           width={120}
           height={120}
           src={document.imageUrl}
-          alt={document.title}
+          alt={document.name}
           unoptimized
           className="w-28 h-28 object-cover rounded-lg"
         />
         <div className="flex flex-col justify-between pe-5">
           <div>
             <div className="w-full flex items-center gap-3 justify-between">
-              <h2 className="text-lg mt-2 font-bold text-gray-dark leading-3 mb-2">
-                {document.title}
+              <h2 className="text-md mt-2 font-bold text-gray-dark leading-5 mb-2">
+                {document.name}
               </h2>
-              <span className="text-xs text-gray-400 font-semibold">PDF</span>
+              <span className="text-xs text-gray-400 font-semibold">
+                {document.format.toUpperCase()}
+              </span>
             </div>
             <p className="text-gray-500 text-sm md:text-base">
               {document.description}

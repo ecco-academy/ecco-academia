@@ -1,14 +1,14 @@
 "use client";
 import React, { ReactNode } from "react";
-import { Document } from "@/modules/document/types/Document";
+import { Document } from "@/modules/document/types/document";
 import clsx from "clsx";
-import { DocumentCard } from "./DocumentCard";
+import { DocumentCard } from "./document-card";
 
 export interface DocumentsSectionProps {
   documents: Document[];
   title?: ReactNode;
   className?: string;
-  onSelectDocument: (courseId: string) => void;
+  onSelectDocument: (document: Document) => void;
 }
 export const DocumentsSection: React.FC<DocumentsSectionProps> = ({
   documents,
@@ -32,8 +32,8 @@ export const DocumentsSection: React.FC<DocumentsSectionProps> = ({
         {documents?.map((document) => (
           <DocumentCard
             document={document}
-            key={document._id}
-            onSelectDocument={() => onSelectDocument(document._id)}
+            key={document.id}
+            onSelectDocument={onSelectDocument}
           />
         ))}
       </div>

@@ -13,48 +13,18 @@ export const bannerSectionContent: BannerSectionProps = {
   mobileImageAlt: "Imagen de estiramiento por Magui",
 };
 
-export const coursesSectionContent: Omit<CoursesSectionProps, "onSelectCourse" | "courses"> = {
+export const coursesSectionContent: Partial<CoursesSectionProps> = {
   title: "Cursos destacados",
 };
 
-export const documentsSectionContent: Omit<DocumentsSectionProps, "onSelectDocument"> =
-  {
-    title: "Documentos",
-    documents: [
-      {
-        _id: "1",
-        title: "El Formulario",
-        description:
-          "Formulario por excelencia a ofrecer a tus clientes antes de cada sesion.",
-        slug: "guia-de-estiramientos",
-        imageUrl: "/ex2.png",
-        price: 0,
-        isFree: true,
-      },
-      {
-        _id: "2",
-        title: "Guía de estiramientos",
-        description:
-          "Aprende a estirar correctamente y mejora tu flexibilidad con esta guía completa.",
-        slug: "guia-de-estiramientos",
-        imageUrl: "/ex1.png",
-        price: 0,
-        isFree: true,
-      },
-      {
-        _id: "3",
-        title: "Guía de estiramientos",
-        description:
-          "Aprende a estirar correctamente y mejora tu flexibilidad con esta guía completa.",
-        slug: "guia-de-estiramientos",
-        imageUrl: "/courseMassage.png",
-        price: 15.55,
-        isFree: false,
-      },
-    ],
-  };
+export const documentsSectionContent: Partial<DocumentsSectionProps> = {
+  title: "Documentos",
+};
 
-export const personalizedServiceContent:Omit<PersonalizedAdviceCardProps, "onClick">  = {
+export const personalizedServiceContent: Omit<
+  PersonalizedAdviceCardProps,
+  "onClick"
+> = {
   title: "Asesoría 1 a 1 con Magui",
   duration: "45 minutos",
   method: "Vía Zoom",

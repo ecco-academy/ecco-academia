@@ -32,7 +32,7 @@ export default async function CourseDetailsPage({
 }: CourseDetailsPageProps) {
   const { courseId } = await params;
   const course = await getCourseById(courseId);
-
+  console.log("course :>> ", course);
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       {!course ? (
@@ -108,8 +108,8 @@ export default async function CourseDetailsPage({
                   <Accordion type="single" collapsible>
                     {course.modules?.map((module) => (
                       <AccordionItem
-                        key={module._id}
-                        value={`module-${module._id}`}
+                        key={module.id}
+                        value={`module-${module.id}`}
                       >
                         <AccordionTrigger className="bg-gray-200/60 px-5 mb-2 text-md">
                           <span className="text-gray-dark w-fit">
@@ -122,21 +122,25 @@ export default async function CourseDetailsPage({
                           </span>{" "}
                         </AccordionTrigger>
                         <AccordionContent className="text-md px-4">
-                          <ul className="space-y-2 text-md">
-                            {module.lessons.map((lesson) => (
-                              <li
-                                key={lesson._id}
-                                className="text-md flex items-center justify-between"
-                              >
-                                <span className="text-gray-dark w-fit text-sm font-semibold text-md mb-1">
-                                  {lesson.title}
-                                </span>
-                                <span className="text-primary-dark text-sm font-semibold">
-                                  {lesson.duration}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
+                          {module?.lessons?.length > 0 ? (
+                            <ul className="space-y-2 text-md">
+                              {module.lessons.map((lesson) => (
+                                <li
+                                  key={lesson._id}
+                                  className="text-md flex items-center justify-between"
+                                >
+                                  <span className="text-gray-dark w-fit text-sm font-semibold text-md mb-1">
+                                    {lesson.title}
+                                  </span>
+                                  <span className="text-primary-dark text-sm font-semibold">
+                                    {lesson.duration}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <span>{module?.description}</span>
+                          )}
                         </AccordionContent>
                       </AccordionItem>
                     ))}

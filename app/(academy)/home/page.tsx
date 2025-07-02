@@ -12,17 +12,20 @@ import {
 } from "@/content/home";
 import React from "react";
 import { useCourses } from "@/modules/home/hooks/useCourses";
+import { useDocuments } from "@/modules/home/hooks/useDocuments";
+import { Document } from "@/modules/document/types/document";
 
 export default function HomePage() {
   const { courses } = useCourses();
+  const { documents } = useDocuments();
   const router = useRouter();
 
   const handleSelectCourse = (courseId: string) => {
     router.push(`/courses/${courseId}/details`);
   };
 
-  const handleSelectDocument = (documentId: string) => {
-    router.push(`/documents/${documentId}`);
+  const handleSelectDocument = (document: Document) => {
+    router.push(`/documents/${document.id}`);
   };
 
   const handleSelectPersonalizedAdvice = () => {
@@ -42,6 +45,7 @@ export default function HomePage() {
           <DocumentsSection
             className="col-span-7"
             {...documentsSectionContent}
+            documents={documents || []}
             onSelectDocument={handleSelectDocument}
           />
           <PersonalizedAdviceCard

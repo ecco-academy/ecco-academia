@@ -1,12 +1,13 @@
 export interface Document {
-    _id: string;
-    title: string;
+    id: string;
+    name: string;
     description: string;
-    slug: string;
+    nameSlug: string;
     imageUrl: string;
     price: number;
+    format: string;
+    downloadUrl: string;
     isFree?: boolean;
-    downloadUrl?: string;
     createdAt?: string;
-    updatedAt?: string;
+
 }

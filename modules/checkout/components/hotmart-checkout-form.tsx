@@ -22,11 +22,6 @@ export default function HotmartCheckout(props: HotmartCheckoutProps) {
         prefilledInfo: {
           name: props.userName,
           email: props.userEmail,
-          doc: "1234567909",
-          zip: "30110056",
-          phoneac: "31",
-          phonenumber: "988887777",
-          sck: "your sck param",
         },
       });
       elements?.mount("#inline_checkout");

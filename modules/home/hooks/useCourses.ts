@@ -5,6 +5,7 @@ import { Course } from "@/modules/course/types/course";
 export const useCourses = () => {
   const [courses, setCourses] = useState<Course[]>();
   const [error, setError] = useState(null);
+  
   useEffect(() => {
     getCourses()
       .then((data) => setCourses(data))
