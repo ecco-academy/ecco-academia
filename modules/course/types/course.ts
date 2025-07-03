@@ -2,15 +2,15 @@ export interface Course {
     id: string; //
     title: string; //
     description: string; //
-    shortDescription?: string; //
-    isMain?: boolean; //
-    hotmartCode?: string; //
-    createdAt?: string; //
+    createdAt: string; //
     slug: string; //
     price: number; //
     imageUrl: string; //
     instructor: Instructor; //
     level?: CourseLevel; //
+    shortDescription?: string; //
+    hotmartCode?: string; //
+    isMain?: boolean; //
     lessonsCount?: number; //
 
     duration?: string;

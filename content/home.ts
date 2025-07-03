@@ -1,8 +1,10 @@
-import { BannerSectionProps } from "@/modules/home/components/BannerSection";
-import { CoursesSectionProps } from "@/modules/home/components/CoursesSection";
+import { BannerSectionProps } from "@/modules/home/components/banner-section";
+import { CoursesSectionProps } from "@/modules/home/components/courses-section";
 import { DocumentsSectionProps } from "@/modules/home/components/DocumentsSection";
 import { PersonalizedAdviceCardProps } from "@/modules/home/components/PersonalizedAdviceCard";
 import { course } from "@/data/courses";
+import { Course } from "@/modules/course/types/course";
+import { Document } from "@/modules/document/types/document";
 
 export const bannerSectionContent: BannerSectionProps = {
   title: "Bienvenido a Ecco Academia",
@@ -30,4 +32,35 @@ export const personalizedServiceContent: Omit<
   method: "Vía Zoom",
   description:
     "Obtén una consejería personalizada con Magui Abuin, experta en masoterapia. Te ayudará a resolver tus dudas y a mejorar tu técnica. ¡No te lo pierdas!",
+};
+
+export const emptyCourseForSkeleton : Course = {
+  id: "1",
+  title: "",
+  description: "",
+  imageUrl: "",
+  instructor: {
+    id: "",
+    name: "",
+    avatarUrl: "",
+  },
+  level:undefined,
+  lessonsCount: undefined,
+  createdAt: "",
+  slug: "",
+  price: NaN,
+  isMain: true,
+  modules: [],
+};
+
+export const emptyDocumentForSkeleton: Document = {
+  id: "1",
+  name: "",
+  description: "",
+  imageUrl: "",
+  createdAt: "",
+  nameSlug: "",
+  format: "",
+  downloadUrl: "",
+  price: NaN,
 };

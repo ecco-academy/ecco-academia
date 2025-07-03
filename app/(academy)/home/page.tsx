@@ -1,13 +1,15 @@
 "use client";
-import { BannerSection } from "../../../modules/home/components/BannerSection";
+import { BannerSection } from "../../../modules/home/components/banner-section";
 import { useRouter } from "next/navigation";
-import { CoursesSection } from "@/modules/home/components/CoursesSection";
+import { CoursesSection } from "@/modules/home/components/courses-section";
 import { DocumentsSection } from "@/modules/home/components/DocumentsSection";
 import { PersonalizedAdviceCard } from "@/modules/home/components/PersonalizedAdviceCard";
 import {
   bannerSectionContent,
   coursesSectionContent,
   documentsSectionContent,
+  emptyCourseForSkeleton,
+  emptyDocumentForSkeleton,
   personalizedServiceContent,
 } from "@/content/home";
 import React from "react";
@@ -38,14 +40,14 @@ export default function HomePage() {
       <div className=" max-w-screen-full mx-auto">
         <CoursesSection
           {...coursesSectionContent}
-          courses={courses || []}
+          courses={courses || [emptyCourseForSkeleton]}
           onSelectCourse={handleSelectCourse}
         />
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 pt-2 p-4">
           <DocumentsSection
             className="col-span-7"
             {...documentsSectionContent}
-            documents={documents || []}
+            documents={documents || [emptyDocumentForSkeleton]}
             onSelectDocument={handleSelectDocument}
           />
           <PersonalizedAdviceCard
