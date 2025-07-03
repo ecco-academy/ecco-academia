@@ -9,13 +9,14 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Image from "@/components/ui/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loadingLogin, setLoadingLogin] = useState(false);
-
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirectTo");
   const handleLogin = async (data: LoginFormFields) => {
     try {
       setLoadingLogin(true);
@@ -24,7 +25,7 @@ export default function LoginPage() {
         password: data.password,
       });
       if (res.data.user) {
-        router.push("/home");
+        router.push(redirectTo || "/home");
       }
       if (res.error) {
         setErrorMessage(res.error.message);

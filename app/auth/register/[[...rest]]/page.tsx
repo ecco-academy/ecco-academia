@@ -9,14 +9,15 @@ import {
 } from "@/modules/auth/components/RegisterForm";
 import Image from "@/components/ui/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loadingRegister, setLoadingRegister] = useState(false);
-
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirectTo");
   const handleRegister = async (data: RegisterFormFields) => {
     try {
       setLoadingRegister(true);
@@ -30,7 +31,7 @@ export default function LoginPage() {
         },
       });
       if (res.data.user) {
-        router.push("/home");
+        router.push(redirectTo || "/home");
       }
       if (res.error) {
         setErrorMessage(res.error.message);

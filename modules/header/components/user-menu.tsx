@@ -1,11 +1,14 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+import Link from "next/link";
 import React from "react";
 
 export interface UserMenuAction {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
+  url?: string;
   icon?: React.ReactNode;
 }
 
@@ -35,20 +38,35 @@ export const UserMenu: React.FC<UserMenuProps> = ({
       </div>
       <Separator className="my-1" />
       <div className="flex flex-col">
-        {menuActions.map((action, index) => (
-          <button
-            key={index}
-            onClick={action.onClick}
-            className="flex items-center gap-1 px-3 py-2 text-left hover:bg-gray-100"
-          >
-            {action.icon && (
-              <span className="text-gray-400 max-h-10">{action.icon}</span>
-            )}
-            <span className="text-xs text-gray-600 font-medium">
-              {action.label}
-            </span>
-          </button>
-        ))}
+        {menuActions.map((action, index) =>
+          action?.url ? (
+            <Link
+              key={index}
+              href={action.url}
+              className="flex items-center gap-1 px-3 py-2 text-left hover:bg-gray-100"
+            >
+              {action.icon && (
+                <span className="text-gray-400 max-h-10">{action.icon}</span>
+              )}
+              <span className="text-xs text-gray-600 font-medium">
+                {action.label}
+              </span>
+            </Link>
+          ) : (
+            <button
+              key={index}
+              onClick={action.onClick}
+              className="flex items-center gap-1 px-3 py-2 text-left hover:bg-gray-100"
+            >
+              {action.icon && (
+                <span className="text-gray-400 max-h-10">{action.icon}</span>
+              )}
+              <span className="text-xs text-gray-600 font-medium">
+                {action.label}
+              </span>
+            </button>
+          )
+        )}
       </div>
       <Separator className="my-1" />
       <button

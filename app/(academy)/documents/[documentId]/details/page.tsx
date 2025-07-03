@@ -24,7 +24,7 @@ export default async function DocumentDetailsPage({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user?.id) redirect("/auth/login");
+  if (!user?.id) redirect(`/auth/login?redirectTo=/documents/${documentId}`);
 
   const document = await getDocumentById(documentId);
 

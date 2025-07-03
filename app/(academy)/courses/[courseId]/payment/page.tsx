@@ -26,7 +26,8 @@ export default async function CoursePaymentPage({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user?.id) redirect(`/auth/login`);
+  if (!user?.id)
+    redirect(`/auth/login?redirectTo=/courses/${courseId}/payment`);
   const course = await getCourseById(courseId);
 
   return (

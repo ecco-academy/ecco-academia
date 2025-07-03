@@ -42,10 +42,8 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
       icon: <UserIcon height={14} />,
     },
     {
-      label: "Mis cursos",
-      onClick: () => {
-        // Handle logout click
-      },
+      label: "Mis compras",
+      url: `/purchases/${user?.id}`,
       icon: <Album height={14} />,
     },
     {

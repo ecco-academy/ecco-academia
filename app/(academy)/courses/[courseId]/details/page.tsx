@@ -32,7 +32,10 @@ export default async function CourseDetailsPage({
 }: CourseDetailsPageProps) {
   const { courseId } = await params;
   const course = await getCourseById(courseId);
-  console.log("course :>> ", course);
+
+  const getBuyCourseUrl = (courseId: string) => {
+    return `/courses/${courseId}/payment`;
+  };
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       {!course ? (
@@ -71,7 +74,7 @@ export default async function CourseDetailsPage({
                 >
                   <Button asChild>
                     <Link
-                      href={`/courses/${course.id}/payment`}
+                      href={getBuyCourseUrl(course.id)}
                       className="w-full mt-4 bg-primary-dark hover:bg-primary-dark"
                     >
                       <ShoppingCart strokeWidth={2.5} size={14} />
@@ -160,7 +163,7 @@ export default async function CourseDetailsPage({
               >
                 <Button asChild>
                   <Link
-                    href={`/courses/${course.id}/payment`}
+                    href={getBuyCourseUrl(course.id)}
                     className="w-full mt-4 bg-primary-dark hover:bg-primary-dark"
                   >
                     <ShoppingCart strokeWidth={2.5} size={14} />
