@@ -1,7 +1,7 @@
 import { BannerSectionProps } from "@/modules/home/components/banner-section";
 import { CoursesSectionProps } from "@/modules/home/components/courses-section";
 import { DocumentsSectionProps } from "@/modules/home/components/DocumentsSection";
-import { PersonalizedAdviceCardProps } from "@/modules/home/components/PersonalizedAdviceCard";
+import { PersonalizedAdviceCardProps } from "@/modules/home/components/personalized-advice-card";
 import { course } from "@/data/courses";
 import { Course } from "@/modules/course/types/course";
 import { Document } from "@/modules/document/types/document";

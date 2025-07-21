@@ -1,4 +1,4 @@
-import VideoPlayer from "@/modules/course/components/VidePlayer";
+import VideoPlayer from "@/modules/course/components/video-player";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Course } from "@/modules/course/types/course";
 import React from "react";
-import { CourseDetailsCard } from "@/modules/course/components/CourseDetailsCard";
+import { CourseDetailsCard } from "@/modules/course/components/course-details-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -17,8 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { InstructorDetails } from "@/modules/course/components/InstructorDetails";
-import { CoursePriceCard } from "@/modules/course/components/CoursePriceCard";
+import { InstructorDetails } from "@/modules/course/components/instructor-details";
+import { CoursePriceCard } from "@/modules/course/components/course-price-card";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -45,9 +45,9 @@ export default async function CourseDetailsPage({
           <CourseBreadcrumb course={course} />
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 pt-2 mt-4 md:mt-6">
             <div className="col-span-2 ">
-              <div className="w-full rounded-xl overflow-hidden h-[224px] md:h-[391px] mb-4 ">
+              <div className="w-full rounded-xl overflow-hidden h-[228px] md:h-[391px] mb-4 ">
                 <VideoPlayer
-                  className="w-full rounded-md"
+                  className="w-full h-fit rounded-md"
                   url={"/openingVideo.mp4"}
                   controls
                   width="100%"
@@ -61,52 +61,29 @@ export default async function CourseDetailsPage({
                   }}
                 />
               </div>
-              <h2 className="font-bold text-gray-dark text-[22px] lg:text-2xl mb-2">
-                {course.title}
-              </h2>
-              <p className="text-gray-dark mb-6 ">{course.description}</p>
-              <div className="lg:hidden mb-6">
-                <CourseDetailsCard
-                  className="mb-6"
-                  timeDuration={course.duration}
-                  level={course.level}
-                  lessonsCount={course.lessonsCount}
-                >
-                  <Button asChild>
-                    <Link
-                      href={getBuyCourseUrl(course.id)}
-                      className="w-full mt-4 bg-primary-dark hover:bg-primary-dark"
-                    >
-                      <ShoppingCart strokeWidth={2.5} size={14} />
-                      <span className="text-sm">Comprar curso</span>
-                    </Link>
-                  </Button>
-                </CourseDetailsCard>
-                <InstructorDetails
-                  className="mb-6"
-                  instructor={course.instructor}
-                />
-                <CoursePriceCard
-                  className="mb-6"
-                  price={course.price}
-                  description={
-                    "Curso completo con acceso a todos los módulos, lecciones y materiales."
-                  }
-                />
-              </div>
 
-              <Tabs defaultValue="modules" className="w-full">
+              <Tabs defaultValue="details" className="w-full">
                 <TabsList className="gap-6 w-full">
+                  <TabsTrigger
+                    className="text-lg  text-start px-0"
+                    value="details"
+                  >
+                    Detalles
+                  </TabsTrigger>
                   <TabsTrigger
                     className="text-lg  text-start px-0"
                     value="modules"
                   >
                     Módulos
                   </TabsTrigger>
-                  {/* <TabsTrigger className="text-lg  text-start px-0" value="reviews">
-                Testimonios
-              </TabsTrigger> */}
                 </TabsList>
+
+                <TabsContent value="details">
+                  <h2 className="font-bold text-gray-dark text-[22px] lg:text-2xl mb-2">
+                    {course.title}
+                  </h2>
+                  <p className="text-gray-dark ">{course.description}</p>
+                </TabsContent>
                 <TabsContent value="modules">
                   <Accordion type="single" collapsible>
                     {course.modules?.map((module) => (
@@ -149,12 +126,9 @@ export default async function CourseDetailsPage({
                     ))}
                   </Accordion>
                 </TabsContent>
-                {/* <TabsContent value="reviews">
-              Change your password here.
-            </TabsContent> */}
               </Tabs>
             </div>
-            <div className="col-span-1 hidden lg:block">
+            <div className="col-span-1">
               <CourseDetailsCard
                 className="mb-6"
                 timeDuration={course.duration}

@@ -3,7 +3,7 @@ import { BannerSection } from "../../../modules/home/components/banner-section";
 import { useRouter } from "next/navigation";
 import { CoursesSection } from "@/modules/home/components/courses-section";
 import { DocumentsSection } from "@/modules/home/components/DocumentsSection";
-import { PersonalizedAdviceCard } from "@/modules/home/components/PersonalizedAdviceCard";
+import { PersonalizedAdviceCard } from "@/modules/home/components/personalized-advice-card";
 import {
   bannerSectionContent,
   coursesSectionContent,

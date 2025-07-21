@@ -1,7 +1,6 @@
 import { getPurchasesByUserID } from "@/modules/purchase/server/action";
 import { Card, CardContent } from "@/components/ui/card";
-import { Suspense } from "react";
-import Link from "next/link";
+import { format, parse } from "@formkit/tempo";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -23,25 +22,23 @@ export default async function PurchasesPage({ params }: PurchasesPageProps) {
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       <PurchasesBreadcrumb />
       <ul className="space-y-4">
-        {purchases.map((purchase, idx) =>
-          purchase ? (
+        {purchases.map((purchase, idx) => {
+          const readable = format(purchase.created_at, "full");
+          return purchase ? (
             <Card key={purchase.id}>
               <CardContent>
                 <div className="flex justify-between items-center">
                   <span className="font-semibold">{purchase.productName}</span>
-                  <span className="text-sm text-gray-500">
-                    {purchase?.created_at?.toString()}
-                  </span>
+                  <span className="text-sm text-gray-500">{readable}</span>
                 </div>
-
                 <hr className="my-2" />
                 <span className="text-sm text-gray-400 font-semibold">
                   {purchase?.currency} {purchase?.priceWithDiscount}
                 </span>
               </CardContent>
             </Card>
-          ) : null
-        )}
+          ) : null;
+        })}
       </ul>
     </div>
   );

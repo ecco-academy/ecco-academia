@@ -19,6 +19,11 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   onSelectCourse,
   className,
 }) => {
+  const handleSelectCourse = () => {
+    if (course?.title) {
+      onSelectCourse(course.id);
+    }
+  };
   return (
     <Card
       key={course.id}
@@ -26,7 +31,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         "flex flex-col md:flex-row justify-start w-full  overflow-hidden gap-0 p-0 h-full cursor-pointer min-h-[250px]",
         className
       )}
-      onClick={() => onSelectCourse(course.id)}
+      onClick={handleSelectCourse}
     >
       {course?.imageUrl ? (
         <Image
@@ -59,7 +64,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         </div>
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center max-w-50 w-full md:max-w-none">
-            {course.instructor.name ? (
+            {course?.instructor?.name ? (
               <Avatar className="me-2 mt-1">
                 <AvatarImage
                   src={course?.instructor?.avatarUrl || "/profile.png"}
@@ -87,7 +92,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
             </div>
           </div>
           {course?.title && (
-            <Button variant="outline" onClick={() => onSelectCourse(course.id)}>
+            <Button variant="default" onClick={() => onSelectCourse(course.id)}>
               Ver detalles
             </Button>
           )}

@@ -13,11 +13,16 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
   document,
   onSelectDocument,
 }) => {
+  const handleSelectDocument = () => {
+    if (document?.name) {
+      onSelectDocument(document);
+    }
+  };
   return (
     <Card
       key={document.id}
       className="gap-0 p-0 cursor-pointer"
-      onClick={() => onSelectDocument(document)}
+      onClick={handleSelectDocument}
     >
       <CardContent className="flex p-3 gap-5">
         {document.imageUrl ? (
@@ -27,7 +32,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
             src={document.imageUrl}
             alt={document.name}
             unoptimized
-            className="w-28 h-28 object-cover rounded-lg"
+            className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-lg"
           />
         ) : (
           <Skeleton width={120} height={120} className="rounded-lg" />

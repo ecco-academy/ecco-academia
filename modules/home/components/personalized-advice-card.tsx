@@ -22,7 +22,7 @@ export const PersonalizedAdviceCard: React.FC<PersonalizedAdviceCardProps> = ({
   return (
     <div
       className={clsx(
-        "rounded-xl px-7 py-5 h-fit bg-gradient-to-br from-primary/10 to-primary/30 shadow-xs w-full",
+        "rounded-xl px-7 py-5 h-fit bg-gradient-to-br from-primary/10 to-primary/15 shadow-xs w-full",
         className
       )}
     >
@@ -33,7 +33,7 @@ export const PersonalizedAdviceCard: React.FC<PersonalizedAdviceCardProps> = ({
       <p className="text-gray-500 mb-6">{description}</p>
       <div className="w-full flex items-center justify-between">
         <span className="text-gray-400 font-semibold"></span>
-        <Button className="px-8" variant={"default"} onClick={onClick}>
+        <Button className="px-8" variant={"outline"} onClick={onClick}>
           Agendar cita con Magui
         </Button>
       </div>

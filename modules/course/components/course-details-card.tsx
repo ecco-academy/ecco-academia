@@ -6,6 +6,13 @@ import { Timer } from "lucide-react";
 import clsx from "clsx";
 import { Book } from "lucide-react";
 import { ChartNoAxesColumnIncreasing } from "lucide-react";
+
+const mapLevelToText: Record<CourseLevel, string> = {
+  beginner: "Principiante",
+  intermediate: "Intermedio",
+  advanced: "Avanzado",
+};
+
 export interface CourseDetailsCardProps {
   className?: string;
   timeDuration?: string;
@@ -52,7 +59,11 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
               <span className="leading-none">Nivel</span>
             </header>
             <p className="flex justify-center w-full bg-gray-100 py-2 font-medium">
-              {level ? <span className="capitalize">{level}</span> : "N/A"}
+              {level ? (
+                <span className="capitalize">{mapLevelToText[level]}</span>
+              ) : (
+                "N/A"
+              )}
             </p>
           </li>
         </ul>

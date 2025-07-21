@@ -77,7 +77,10 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
         {user ? (
           <Popover>
             <PopoverTrigger>
-              <div className="text-gray-700 hover:text-gray-900 flex items-center gap-2 hover:bg-transparent cursor-pointer">
+              <div className="text-gray-700 hover:text-gray-900 flex items-center gap-3 hover:bg-transparent cursor-pointer">
+                <span className="text-gray-600 font-medium text-sm">
+                  {user?.user_metadata?.first_name}
+                </span>
                 <Avatar className="w-7 h-7">
                   <AvatarImage
                     src={"/user.png"}
