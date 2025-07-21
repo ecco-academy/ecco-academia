@@ -50,7 +50,6 @@ export const LoginForm: React.FC<AuthFormProps> = ({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Correo</FormLabel>
               <FormControl>
                 <Input placeholder="Tu correo electrónico" {...field} />
               </FormControl>
@@ -62,7 +61,6 @@ export const LoginForm: React.FC<AuthFormProps> = ({
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Contraseña</FormLabel>
               <FormControl>
                 <Input placeholder="Tu contraseña" {...field} type="text" />
               </FormControl>

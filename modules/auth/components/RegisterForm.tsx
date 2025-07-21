@@ -55,7 +55,6 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
           name="userName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Tu nombre completo"
@@ -72,7 +71,6 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Correo</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Tu correo electrónico"
@@ -89,7 +87,6 @@ export const RegisterForm: React.FC<AuthFormProps> = ({
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Contraseña</FormLabel>
               <FormControl>
                 <Input placeholder="Tu contraseña" {...field} type="text" />
               </FormControl>

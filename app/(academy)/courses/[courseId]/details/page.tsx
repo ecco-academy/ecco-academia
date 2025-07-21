@@ -49,7 +49,7 @@ export default async function CourseDetailsPage({
               <div className="w-full rounded-xl overflow-hidden h-[228px] md:h-[391px] mb-4 ">
                 <VideoPlayer
                   className="w-full h-fit rounded-md"
-                  url={"/openingVideo.mp4"}
+                  url={"https://www.youtube.com/watch?v=_qrISJjWiH0"}
                   controls
                   width="100%"
                   height="100%"

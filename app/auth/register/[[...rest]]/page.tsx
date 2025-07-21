@@ -48,7 +48,7 @@ export default function LoginPage() {
   };
 
   return (
-    <Card className="w-fit max-w-[400px]">
+    <Card className="w-full max-w-[400px]">
       <CardContent>
         <Image
           src="/logo.png"
@@ -57,11 +57,9 @@ export default function LoginPage() {
           height={32}
           className="mx-auto mb-2"
         />
-        <h2 className="text-xl font-bold mb-2 text-center ">Crear cuenta</h2>
-        <p className="text-sm text-gray-600 mb-6">
-          Bienvenido a Ecco Academia! Una vez creada tu cuenta, podrás acceder a
-          todos los cursos y recursos disponibles.
-        </p>
+        <h2 className="text-2xl font-bold mb-5 text-center text-gray-dark">
+          Crear cuenta
+        </h2>
         <div>
           {errorMessage && (
             <Alert variant="destructive" className="mb-4">

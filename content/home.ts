@@ -1,14 +1,13 @@
 import { BannerSectionProps } from "@/modules/home/components/banner-section";
 import { CoursesSectionProps } from "@/modules/home/components/courses-section";
-import { DocumentsSectionProps } from "@/modules/home/components/DocumentsSection";
+import { DocumentsSectionProps } from "@/modules/home/components/documents-section";
 import { PersonalizedAdviceCardProps } from "@/modules/home/components/personalized-advice-card";
-import { course } from "@/data/courses";
 import { Course } from "@/modules/course/types/course";
 import { Document } from "@/modules/document/types/document";
 
 export const bannerSectionContent: BannerSectionProps = {
-  title: "Bienvenido a Ecco Academia",
-  description: "Más de 3 años impactando con energía la vida de las personas.",
+  title: "Bienvenido a Ecco",
+  description: "Te mostramos el mapa hacia un negocio de masajes exitos.",
   desktopImageSrc: "/bannerDesktop.png",
   desktopImageAlt: "Imagen de estiramiento por Magui",
   mobileImageSrc: "/bannerMobile.png",
@@ -16,7 +15,7 @@ export const bannerSectionContent: BannerSectionProps = {
 };
 
 export const coursesSectionContent: Partial<CoursesSectionProps> = {
-  title: "Cursos destacados",
+  title: "Aprende con Magui",
 };
 
 export const documentsSectionContent: Partial<DocumentsSectionProps> = {

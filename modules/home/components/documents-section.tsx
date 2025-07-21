@@ -24,7 +24,7 @@ export const DocumentsSection: React.FC<DocumentsSectionProps> = ({
       )}
     >
       <div className=" mb-4 lg:mb-5">
-        <h1 className="font-semibold text-gray-dark text-[22px] lg:text-2xl">
+        <h1 className="font-semibold text-gray-base text-[22px] lg:text-2xl">
           {title}
         </h1>
       </div>

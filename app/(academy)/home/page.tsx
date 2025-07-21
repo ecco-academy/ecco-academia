@@ -2,7 +2,7 @@
 import { BannerSection } from "../../../modules/home/components/banner-section";
 import { useRouter } from "next/navigation";
 import { CoursesSection } from "@/modules/home/components/courses-section";
-import { DocumentsSection } from "@/modules/home/components/DocumentsSection";
+import { DocumentsSection } from "@/modules/home/components/documents-section";
 import { PersonalizedAdviceCard } from "@/modules/home/components/personalized-advice-card";
 import {
   bannerSectionContent,
@@ -31,7 +31,8 @@ export default function HomePage() {
   };
 
   const handleSelectPersonalizedAdvice = () => {
-    router.push("/personalized-advice");
+    // router.push("/personalized-advice");
+    return;
   };
 
   return (
