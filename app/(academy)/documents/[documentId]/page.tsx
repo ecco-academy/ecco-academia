@@ -1,6 +1,7 @@
+import { PageProps } from "@/.next/types/app/page";
 import { redirect } from "next/navigation";
-interface DocumentPageProps {
-  params: { documentId: string };
+interface DocumentPageProps extends PageProps {
+  params: Promise<{ documentId: string }>;
 }
 
 export default async function DocumentPage({ params }: DocumentPageProps) {

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Alert } from "@/components/ui/alert";
 interface CoursePaymentPageProps {
-  params: { courseId: string };
+  params: Promise<{ courseId: string }>;
 }
 
 export default async function CoursePaymentPage({

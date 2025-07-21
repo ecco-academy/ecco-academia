@@ -1,6 +1,6 @@
 import { getPurchasesByUserID } from "@/modules/purchase/server/action";
 import { Card, CardContent } from "@/components/ui/card";
-import { format, parse } from "@formkit/tempo";
+import { format } from "@formkit/tempo";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,9 +9,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { PageProps } from "@/.next/types/app/page";
 
-interface PurchasesPageProps {
-  params: { userId: string };
+interface PurchasesPageProps extends PageProps {
+  params: Promise<{ userId: string }>;
 }
 
 export default async function PurchasesPage({ params }: PurchasesPageProps) {

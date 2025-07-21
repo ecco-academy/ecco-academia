@@ -10,15 +10,16 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { PageProps } from "@/.next/types/app/page";
 
-interface DocumentDetailsPageProps {
-  params: { documentId: string };
+interface DocumentDetailsPageProps extends PageProps {
+  params: Promise<{ documentId: string }>;
 }
 
 export default async function DocumentDetailsPage({
   params,
 }: DocumentDetailsPageProps) {
-  const { documentId } = params;
+  const { documentId } = await params;
   const supabase = await createClient();
   const {
     data: { user },

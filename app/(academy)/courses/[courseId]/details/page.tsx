@@ -24,8 +24,9 @@ import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert } from "@/components/ui/alert";
 import { getCourseById } from "@/modules/course/server/action";
-interface CourseDetailsPageProps {
-  params: { courseId: string };
+import { PageProps } from "@/.next/types/app/layout";
+interface CourseDetailsPageProps extends PageProps {
+  params: Promise<{ courseId: string }>;
 }
 export default async function CourseDetailsPage({
   params,

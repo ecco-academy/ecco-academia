@@ -2,7 +2,7 @@ import { Course, Module } from "@/modules/course/types/course";
 
 const modules: Module[] = [
   {
-    _id: "mod-1",
+    id: "mod-1",
     title: "Introducción al Masaje Terapéutico",
     description: "Explora los fundamentos y beneficios del masaje terapéutico.",
     number: "1",
@@ -51,7 +51,7 @@ const modules: Module[] = [
     ]
   },
   {
-    _id: "mod-2",
+    id: "mod-2",
     title: "Anatomía Básica para Masajistas",
     description: "Conocimientos anatómicos esenciales para el trabajo del masajista.",
     number: "2",
@@ -100,7 +100,7 @@ const modules: Module[] = [
     ]
   },
   {
-    _id: "mod-3",
+    id: "mod-3",
     title: "Técnicas Básicas de Masaje",
     description: "Aprende y aplica maniobras esenciales en la práctica del masaje.",
     number: "3",
@@ -164,12 +164,13 @@ export const course: Course = {
     name: "Maga Abuin",
     avatarUrl: "/profile.png",
     bio: "Experta en masoterapia",
-    _id: "123",
+    id: "123",
     description: "Con más de 8 años de experiencia en el campo del masaje terapéutico, he ayudado a cientos de personas a mejorar su bienestar físico y emocional.",
   },
   level: 'advanced',
   lessonsCount: 25,
-  modules: modules
+  modules: modules,
+  createdAt: new Date("2023-01-01T00:00:00Z").toDateString(),
 };
 
 
