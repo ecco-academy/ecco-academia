@@ -40,7 +40,7 @@ export default async function CourseDetailsPage({
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       {!course ? (
-        <Alert className="mb-4">No se encontró el curso solicitado.</Alert>
+        <Alert className="mb-4">No se encontró el curso.</Alert>
       ) : (
         <>
           <CourseBreadcrumb course={course} />
