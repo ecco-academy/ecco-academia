@@ -136,10 +136,10 @@ export default async function CourseDetailsPage({
                 level={course.level}
                 lessonsCount={course.lessonsCount}
               >
-                <Button asChild>
+                <Button asChild size={"lg"} className="w-full">
                   <Link
                     href={getBuyCourseUrl(course.id)}
-                    className="w-full mt-4 bg-primary-dark hover:bg-primary-dark"
+                    className="w-full mt-4 bg-primary hover:bg-primary-dark"
                   >
                     <ShoppingCart strokeWidth={2.5} size={14} />
                     <span className="text-sm">Comprar curso</span>

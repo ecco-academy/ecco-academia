@@ -30,9 +30,6 @@ export const CourseDetailsCard: React.FC<CourseDetailsCardProps> = ({
   return (
     <Card className={clsx("pt-4", className)}>
       <CardContent className="flex flex-col justify-center h-full">
-        <h3 className="font-semibold text-lg text-gray-dark mb-3 block">
-          Detalles del curso
-        </h3>
         <div className="w-full flex justify-between text-gray-base">
           <span className="flex items-center gap-1">
             <Timer className="text-gray-dark" size={18} />

@@ -15,7 +15,7 @@ export const bannerSectionContent: BannerSectionProps = {
 };
 
 export const coursesSectionContent: Partial<CoursesSectionProps> = {
-  title: "Aprende con Magui",
+  title: "Cursos destacados",
 };
 
 export const documentsSectionContent: Partial<DocumentsSectionProps> = {
@@ -30,7 +30,7 @@ export const personalizedServiceContent: Omit<
   duration: "45 minutos",
   method: "Vía Zoom",
   description:
-    "Obtén una consejería personalizada con Magui Abuin, experta en masoterapia. Te ayudará a resolver tus dudas y a mejorar tu técnica. ¡No te lo pierdas!",
+    "Obten una consejería personalizada. Resuelve tus dudas sobre el negocio del masaje.",
 };
 
 export const emptyCourseForSkeleton : Course = {
