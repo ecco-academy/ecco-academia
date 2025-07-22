@@ -38,13 +38,13 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
           <Skeleton width={120} height={120} className="rounded-lg" />
         )}
 
-        <div className="flex flex-col justify-between pe-5 w-full">
+        <div className="flex flex-col pe-2 w-full">
           <div>
-            <div className="w-full flex items-center gap-3 justify-between w-full">
-              <h2 className="text-md mt-2 font-bold text-gray-dark leading-5 mb-2 w-full ">
+            <div className="w-full flex items-center gap-3 justify-between ">
+              <h2 className="text-md mt-2 font-bold text-gray-dark leading-5 mb-1 w-full">
                 {document.name || <Skeleton width={"100%"} height={20} />}
               </h2>
-              <span className="text-xs text-gray-400 font-semibold">
+              <span className="text-xs text-gray-400 font-semibold mt-1">
                 {document.format.toUpperCase() || (
                   <Skeleton width={30} height={20} />
                 )}
@@ -55,7 +55,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
             </p>
           </div>
           {document?.name ? (
-            <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center justify-between mt-1">
               {document.isFree ? (
                 <span className="text-green-500 font-semibold">Gratis</span>
               ) : (

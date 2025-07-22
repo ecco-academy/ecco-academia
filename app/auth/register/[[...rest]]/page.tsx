@@ -6,7 +6,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   RegisterForm,
   RegisterFormFields,
-} from "@/modules/auth/components/RegisterForm";
+} from "@/modules/auth/components/register-form";
 import Image from "@/components/ui/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -57,9 +57,14 @@ export default function LoginPage() {
           height={32}
           className="mx-auto mb-2"
         />
-        <h2 className="text-2xl font-bold mb-5 text-center text-gray-dark">
+        <h2 className="text-2xl font-bold mb-2 text-center text-gray-dark">
           Crear cuenta
         </h2>
+        <p className="text-sm text-gray-600 mb-7">
+          Bienvenido a Ecco Academia. Una vez creada tu cuenta, podrás acceder a
+          todos los cursos y recursos disponibles.
+        </p>
+
         <div>
           {errorMessage && (
             <Alert variant="destructive" className="mb-4">

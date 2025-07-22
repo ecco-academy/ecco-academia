@@ -33,8 +33,13 @@ export const PersonalizedAdviceCard: React.FC<PersonalizedAdviceCardProps> = ({
       <p className="text-gray-500 mb-6">{description}</p>
       <div className="w-full flex items-center justify-between">
         <span className="text-gray-400 font-semibold"></span>
-        <Button className="px-8" variant={"outline"} onClick={onClick}>
-          Agendar cita con Magui
+        <Button
+          className="px-8"
+          variant={"default"}
+          onClick={onClick}
+          size={"lg"}
+        >
+          Agenda tu cita
         </Button>
       </div>
     </div>

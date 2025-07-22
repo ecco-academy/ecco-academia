@@ -5,7 +5,7 @@ import { login } from "@/modules/auth/server/actions";
 import {
   LoginForm,
   LoginFormFields,
-} from "@/modules/auth/components/LoginForm";
+} from "@/modules/auth/components/login-form";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Image from "@/components/ui/image";
 import Link from "next/link";
@@ -51,9 +51,13 @@ export default function LoginPage() {
           height={32}
           className="mx-auto mb-2"
         />
-        <h2 className="text-2xl font-bold mb-5 text-center text-gray-dark">
+        <h2 className="text-2xl font-bold mb-2 text-center text-gray-dark">
           Iniciar Sesión
         </h2>
+        <p className="text-sm text-gray-600 mb-7">
+          Bienvenido a Ecco Academia. Introduce tus credenciales para comenzar.
+        </p>
+
         <div>
           {errorMessage && (
             <Alert variant="destructive" className="mb-4">

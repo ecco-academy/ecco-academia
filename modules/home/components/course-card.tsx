@@ -92,7 +92,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
             </div>
           </div>
           {course?.title && (
-            <Button variant="default" onClick={() => onSelectCourse(course.id)}>
+            <Button variant="outline" onClick={() => onSelectCourse(course.id)}>
               Ver detalles
             </Button>
           )}
