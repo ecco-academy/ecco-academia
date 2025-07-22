@@ -44,7 +44,7 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
               <h2 className="text-md mt-2 font-bold text-gray-dark leading-5 mb-1 w-full">
                 {document.name || <Skeleton width={"100%"} height={20} />}
               </h2>
-              <span className="text-xs text-gray-400 font-semibold">
+              <span className="text-xs text-gray-400 font-semibold mt-1">
                 {document.format.toUpperCase() || (
                   <Skeleton width={30} height={20} />
                 )}
