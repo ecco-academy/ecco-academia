@@ -22,25 +22,33 @@ export default async function PurchasesPage({ params }: PurchasesPageProps) {
   return (
     <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
       <PurchasesBreadcrumb />
-      <ul className="space-y-4">
-        {purchases.map((purchase, idx) => {
-          const readable = format(purchase.created_at, "full");
-          return purchase ? (
-            <Card key={purchase.id}>
-              <CardContent>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">{purchase.productName}</span>
-                  <span className="text-sm text-gray-500">{readable}</span>
-                </div>
-                <hr className="my-2" />
-                <span className="text-sm text-gray-400 font-semibold">
-                  {purchase?.currency} {purchase?.priceWithDiscount}
-                </span>
-              </CardContent>
-            </Card>
-          ) : null;
-        })}
-      </ul>
+      {purchases?.length === 0 ? (
+        <div className="text-center text-gray-500 mt-12">
+          No tienes compras registradas.
+        </div>
+      ) : (
+        <ul className="space-y-4">
+          {purchases.map((purchase, idx) => {
+            const date = format(purchase.created_at, "short");
+            return purchase ? (
+              <Card key={purchase.id}>
+                <CardContent>
+                  <div className="flex justify-between items-center gap-8">
+                    <span className="font-semibold">
+                      {purchase.productName}
+                    </span>
+                    <span className="text-sm text-gray-500">{date}</span>
+                  </div>
+                  <hr className="my-2" />
+                  <span className="text-sm text-gray-400 font-semibold">
+                    {purchase?.currency} {purchase?.realPrice.toFixed(2)}{" "}
+                  </span>
+                </CardContent>
+              </Card>
+            ) : null;
+          })}
+        </ul>
+      )}
     </div>
   );
 }
