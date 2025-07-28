@@ -25,7 +25,7 @@ export default async function PurchasesPage({ params }: PurchasesPageProps) {
       <PurchasesBreadcrumb />
       {purchases?.length === 0 ? (
         <div className="text-center text-gray-500 mt-12">
-          No tienes compras registradas
+          No tienes compras registradas.
         </div>
       ) : (
         <ul className="space-y-4">
