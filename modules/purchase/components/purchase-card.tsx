@@ -9,7 +9,7 @@ interface PurchaseCardProps {
 
 export function PurchaseCard({ purchase }: PurchaseCardProps) {
   const handleSelectedPurchase = (purchaseId: number) => {
-    window.open(process.env.HOTMART_CLUB_URL || "", "_blank");
+    window.open(process.env.NEXT_PUBLIC_HOTMART_CLUB_URL || "", "_blank");
   };
   const date = new Date(purchase.created_at).toLocaleDateString();
 
