@@ -10,6 +10,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { PageProps } from "@/.next/types/app/page";
+import { PurchaseCard } from "@/modules/purchase/components/purchase-card";
 
 interface PurchasesPageProps extends PageProps {
   params: Promise<{ userId: string }>;
@@ -20,7 +21,7 @@ export default async function PurchasesPage({ params }: PurchasesPageProps) {
   const purchases = await getPurchasesByUserID(userId);
 
   return (
-    <div className="max-w-screen-full mx-auto pt-16 lg:pt-20 px-4">
+    <div className="max-w-screen-full mx-auto py-16 lg:pt-20 px-4 ">
       <PurchasesBreadcrumb />
       {purchases?.length === 0 ? (
         <div className="text-center text-gray-500 mt-12">
@@ -29,22 +30,10 @@ export default async function PurchasesPage({ params }: PurchasesPageProps) {
       ) : (
         <ul className="space-y-4">
           {purchases.map((purchase, idx) => {
-            const date = format(purchase.created_at, "short");
             return purchase ? (
-              <Card key={purchase.id}>
-                <CardContent>
-                  <div className="flex justify-between items-center gap-8">
-                    <span className="font-semibold">
-                      {purchase.productName}
-                    </span>
-                    <span className="text-sm text-gray-500">{date}</span>
-                  </div>
-                  <hr className="my-2" />
-                  <span className="text-sm text-gray-400 font-semibold">
-                    {purchase?.currency} {purchase?.realPrice.toFixed(2)}{" "}
-                  </span>
-                </CardContent>
-              </Card>
+              <li key={purchase.id}>
+                <PurchaseCard purchase={purchase} />
+              </li>
             ) : null;
           })}
         </ul>
