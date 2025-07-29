@@ -36,11 +36,6 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
 
   const menuActions: UserMenuAction[] = [
     {
-      label: "Mi perfil",
-      url: `/user/${user?.id}/overview`,
-      icon: <UserIcon height={14} />,
-    },
-    {
       label: "Mis compras",
       url: `/purchases/${user?.id}`,
       icon: <Album height={14} />,
