@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
 
 const epilogueSans = Epilogue({
   variable: "--font-geist-sans",
@@ -21,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${epilogueSans.variable} antialiased`}>{children}</body>
+      <CrispWithNoSSR />
     </html>
   );
 }
