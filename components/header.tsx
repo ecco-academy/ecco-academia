@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Image } from "@/components/ui/image";
-import React from "react";
+import React, { useState } from "react";
 import { Album, LogIn, Settings, User as UserIcon } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
@@ -23,7 +23,11 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className, user }) => {
   const router = useRouter();
+  const [openUserMenu, setOpenUserMenu] = useState(false);
 
+  const handleOpenUserMenu = (show: boolean) => {
+    setOpenUserMenu(show);
+  };
   const handleLogout = async () => {
     try {
       await signOut();
@@ -34,11 +38,16 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
     }
   };
 
+  const handleSelectedPurchasesOption = (userId?: string) => {
+    if (!userId) return;
+    router.push(`/purchases/${user?.id}`);
+    setOpenUserMenu(false);
+  };
   const menuActions: UserMenuAction[] = [
     {
       label: "Mis compras",
-      url: `/purchases/${user?.id}`,
       icon: <Album height={14} />,
+      onClick: () => handleSelectedPurchasesOption(user?.id),
     },
   ];
 
@@ -62,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
       </div>
       <nav>
         {user ? (
-          <Popover>
+          <Popover open={openUserMenu} onOpenChange={handleOpenUserMenu}>
             <PopoverTrigger>
               <div className="text-gray-700 hover:text-gray-900 flex items-center gap-3 hover:bg-transparent cursor-pointer">
                 <span className="text-gray-600 font-medium text-sm">
