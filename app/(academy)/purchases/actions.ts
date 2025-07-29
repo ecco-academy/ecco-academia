@@ -1,6 +1,7 @@
 "use server";
+
 import { createClient } from "@/lib/utils/supabase/server";
-import { Purchase } from "../types/purchase";
+import { Purchase } from "../../../types/purchase";
 
 export const getPurchasesByUserID = async (userId: string): Promise<Purchase[]> => {
   const supabase = await createClient();

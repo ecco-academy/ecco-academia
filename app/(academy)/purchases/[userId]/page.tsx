@@ -1,6 +1,4 @@
-import { getPurchasesByUserID } from "@/modules/purchase/server/action";
-import { Card, CardContent } from "@/components/ui/card";
-import { format } from "@formkit/tempo";
+import { getPurchasesByUserID } from "@/app/(academy)/purchases/actions";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { PageProps } from "@/.next/types/app/page";
-import { PurchaseCard } from "@/modules/purchase/components/purchase-card";
+import { PurchaseCard } from "@/components/purchase-card";
 
 interface PurchasesPageProps extends PageProps {
   params: Promise<{ userId: string }>;

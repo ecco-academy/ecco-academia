@@ -1,7 +1,7 @@
-import { getDocumentById } from "@/modules/document/server/action";
+import { getDocumentById } from "@/app/(academy)/documents/actions";
 import { createClient } from "@/lib/utils/supabase/server";
 import { redirect } from "next/navigation";
-import DocumentDetailsClient from "../../../../../modules/document/components/document-details-client";
+import DocumentDetailsClient from "../../../../../components/document-details-client";
 import {
   Breadcrumb,
   BreadcrumbItem,

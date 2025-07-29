@@ -1,4 +1,4 @@
-import { Course } from "@/modules/course/types/course";
+import { Course } from "@/types/course";
 import React, { ReactNode } from "react";
 // import { ChevronsRight } from "lucide-react";
 // import Link from "next/link";

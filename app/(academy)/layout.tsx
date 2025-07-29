@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { createClient } from "@/lib/utils/supabase/server";
-import Header from "@/modules/header/components/header";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Ecco Academia",

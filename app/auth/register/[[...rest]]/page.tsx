@@ -1,12 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { signUp } from "@/modules/auth/server/actions";
+import { signUp } from "@/app/auth/actions";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import {
-  RegisterForm,
-  RegisterFormFields,
-} from "@/modules/auth/components/register-form";
+import { RegisterForm, RegisterFormFields } from "@/components/register-form";
 import Image from "@/components/ui/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";

@@ -1,9 +1,9 @@
 import React from "react";
 import { createClient } from "@/lib/utils/supabase/server";
 import { redirect } from "next/navigation";
-import HotmartCheckout from "@/modules/checkout/components/hotmart-checkout-form";
-import { getCourseById } from "@/modules/course/server/action";
-import { Course } from "@/modules/course/types/course";
+import HotmartCheckout from "@/components/hotmart-checkout-form";
+import { getCourseById } from "@/app/(academy)/courses/[courseId]/actions";
+import { Course } from "@/types/course";
 import {
   Breadcrumb,
   BreadcrumbItem,

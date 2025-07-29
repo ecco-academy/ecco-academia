@@ -1,5 +1,5 @@
 import Image from "@/components/ui/image";
-import { Instructor } from "@/modules/course/types/course";
+import { Instructor } from "@/types/course";
 import clsx from "clsx";
 
 export interface InstructorDetailsProps {

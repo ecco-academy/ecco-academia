@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Image } from "@/components/ui/image";
-import { Course } from "@/modules/course/types/course";
+import { Course } from "@/types/course";
 import React from "react";
 import clsx from "clsx";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";

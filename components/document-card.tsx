@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "@/components/ui/image";
-import { Document } from "@/modules/document/types/document";
+import { Document } from "@/types/document";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";

@@ -1,4 +1,4 @@
-import HotmartCheckout from "@/modules/checkout/components/hotmart-checkout-form";
+import HotmartCheckout from "@/components/hotmart-checkout-form";
 import { redirect } from "next/navigation";
 interface CoursePageProps {
   params: Promise<{ courseId: string }>;

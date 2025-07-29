@@ -1,9 +1,9 @@
 "use client";
-import { BannerSection } from "../../../modules/home/components/banner-section";
+import { BannerSection } from "../../../components/banner-section";
 import { useRouter } from "next/navigation";
-import { CoursesSection } from "@/modules/home/components/courses-section";
-import { DocumentsSection } from "@/modules/home/components/documents-section";
-import { PersonalizedAdviceCard } from "@/modules/home/components/personalized-advice-card";
+import { CoursesSection } from "@/components/courses-section";
+import { DocumentsSection } from "@/components/documents-section";
+import { PersonalizedAdviceCard } from "@/components/personalized-advice-card";
 import {
   bannerSectionContent,
   coursesSectionContent,
@@ -13,9 +13,9 @@ import {
   personalizedServiceContent,
 } from "@/content/home";
 import React from "react";
-import { useCourses } from "@/modules/home/hooks/useCourses";
-import { useDocuments } from "@/modules/home/hooks/useDocuments";
-import { Document } from "@/modules/document/types/document";
+import { useCourses } from "@/hooks/use-courses";
+import { useDocuments } from "@/hooks/use-documents";
+import { Document } from "@/types/document";
 
 export default function HomePage() {
   const { courses } = useCourses();

@@ -1,4 +1,4 @@
-import VideoPlayer from "@/modules/course/components/video-player";
+import VideoPlayer from "@/components/video-player";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,9 +7,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Course } from "@/modules/course/types/course";
+import { Course } from "@/types/course";
 import React from "react";
-import { CourseDetailsCard } from "@/modules/course/components/course-details-card";
+import { CourseDetailsCard } from "@/components/course-details-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -17,13 +17,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { InstructorDetails } from "@/modules/course/components/instructor-details";
-import { CoursePriceCard } from "@/modules/course/components/course-price-card";
+import { InstructorDetails } from "@/components/instructor-details";
+import { CoursePriceCard } from "@/components/course-price-card";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert } from "@/components/ui/alert";
-import { getCourseById } from "@/modules/course/server/action";
+import { getCourseById } from "@/app/(academy)/courses/[courseId]/actions";
 import { PageProps } from "@/.next/types/app/layout";
 interface CourseDetailsPageProps extends PageProps {
   params: Promise<{ courseId: string }>;

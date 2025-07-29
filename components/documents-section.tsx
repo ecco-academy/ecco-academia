@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
-import { Document } from "@/modules/document/types/document";
+import { Document } from "@/types/document";
 import clsx from "clsx";
 import { DocumentCard } from "./document-card";
 

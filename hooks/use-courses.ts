@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getCourseById, getCourses } from "@/modules/course/server/action";
-import { Course } from "@/modules/course/types/course";
+import { getCourseById, getCourses } from "@/app/(academy)/courses/[courseId]/actions";
+import { Course } from "@/types/course";
 
 export const useCourses = () => {
   const [courses, setCourses] = useState<Course[]>();

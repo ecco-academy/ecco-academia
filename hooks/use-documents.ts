@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getDocumentById, getDocuments } from "@/modules/document/server/action";
-import { Document } from "@/modules/document/types/document";
+import { getDocumentById, getDocuments } from "@/app/(academy)/documents/actions";
+import { Document } from "@/types/document";
 
 export const useDocuments = () => {
   const [documents, setDocuments] = useState<Document[]>();

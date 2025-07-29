@@ -3,7 +3,7 @@
 
 import { createClient } from '@/lib/utils/supabase/server'
 import {  SignInWithPasswordCredentials, SignUpWithPasswordCredentials } from '@supabase/supabase-js'
-import { AuthResponseDto, LoginResponseDto } from '../types/Auth'
+import { AuthResponseDto, LoginResponseDto } from '../../types/auth'
 
 
 

@@ -1,6 +1,6 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import { CourseLevel } from "@/modules/course/types/course";
+import { CourseLevel } from "@/types/course";
 import React from "react";
 import { Timer } from "lucide-react";
 import clsx from "clsx";

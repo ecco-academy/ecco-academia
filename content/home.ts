@@ -1,9 +1,9 @@
-import { BannerSectionProps } from "@/modules/home/components/banner-section";
-import { CoursesSectionProps } from "@/modules/home/components/courses-section";
-import { DocumentsSectionProps } from "@/modules/home/components/documents-section";
-import { PersonalizedAdviceCardProps } from "@/modules/home/components/personalized-advice-card";
-import { Course } from "@/modules/course/types/course";
-import { Document } from "@/modules/document/types/document";
+import { BannerSectionProps } from "@/components/banner-section";
+import { CoursesSectionProps } from "@/components/courses-section";
+import { DocumentsSectionProps } from "@/components/documents-section";
+import { PersonalizedAdviceCardProps } from "@/components/personalized-advice-card";
+import { Course } from "@/types/course";
+import { Document } from "@/types/document";
 
 export const bannerSectionContent: BannerSectionProps = {
   title: "Bienvenido a Ecco",

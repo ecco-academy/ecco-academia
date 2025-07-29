@@ -13,7 +13,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { UserMenu, UserMenuAction } from "./user-menu";
-import { signOut } from "../client/sign-out";
+import { signOut } from "../app/auth/sign-out";
 import { useRouter } from "next/navigation";
 
 export interface HeaderProps {
@@ -33,25 +33,17 @@ const Header: React.FC<HeaderProps> = ({ className, user }) => {
       console.error("Error al cerrar sesión:", error);
     }
   };
+
   const menuActions: UserMenuAction[] = [
     {
-      label: "Perfil",
-      onClick: () => {
-        // Handle profile click
-      },
+      label: "Mi perfil",
+      url: `/user/${user?.id}/overview`,
       icon: <UserIcon height={14} />,
     },
     {
       label: "Mis compras",
       url: `/purchases/${user?.id}`,
       icon: <Album height={14} />,
-    },
-    {
-      label: "Configuración",
-      onClick: () => {
-        // Handle settings click
-      },
-      icon: <Settings height={14} />,
     },
   ];
 

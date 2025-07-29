@@ -1,6 +1,6 @@
 "use server";
 import { createClient } from "@/lib/utils/supabase/server";
-import { Document } from "../types/document";
+import { Document } from "../../../types/document";
 
 export const getDocuments = async (): Promise<Document[]> => {
   const supabase = await createClient();

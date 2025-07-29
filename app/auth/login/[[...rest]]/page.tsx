@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { login } from "@/modules/auth/server/actions";
-import {
-  LoginForm,
-  LoginFormFields,
-} from "@/modules/auth/components/login-form";
+import { login } from "@/app/auth/actions";
+import { LoginForm, LoginFormFields } from "@/components/login-form";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Image from "@/components/ui/image";
 import Link from "next/link";

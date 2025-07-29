@@ -1,5 +1,5 @@
 "use client";
-import { Document } from "@/modules/document/types/document";
+import { Document } from "@/types/document";
 import Image from "@/components/ui/image";
 import { Button } from "@/components/ui/button";
 import useDownloader from "react-use-downloader";
